@@ -9,6 +9,8 @@ feedback link:
 ## About this Course
 Duration: 5:00
 
+![Python Logo](resources/python-logo-generic.svg)
+
 This course will walk you through the basic concepts of Python, OOP with Python, Project Structure, io and finish with a practical Python project to tie the course material together.
 
 ### Python
@@ -103,7 +105,108 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ## Getting Started
 
+### REPL
+The Python can be runned interactivly through the commandline. Running ```bash python``` in the commandline start a RELP (Read Evaluate Print Loop ) instance.
 
+#### Example
+![RELP Session](resources/repl.png)
+
+#### Example of basic arithmetic in the REPL
+![RELP Session with Arithmetic](resources/repl_sesh.png)
+
+#### Exit REPL
+Windows: Ctrl + Z + Enter
+Mac/Linux: Ctrl + D
+
+
+### Python Standard Library
+
+```python
+
+import module_name
+
+from package import module_name
+
+import module_name as mn
+
+```
+
+#### The free function help() will provide description of provided module
+```python
+
+help(module_name)
+
+```
+
+## Built-in Types
+
+Scalar types and values
+
+- integers   [5]
+- floats     [23.2]
+- NoneType   [None]
+- bool       [True/False]
+
+### int
+unlimited precision signed integer
+
+```python
+
+my_int = 1
+
+my_new_int = int(22.22)
+
+from_str_int = int("456")
+
+```
+
+
+
+### float
+
+```python
+
+my_float = 323.12
+
+my_next_float = 3e8
+
+my_third_float = 1.7e-35
+```
+
+
+### None
+None is the only value of the NoneType. It is most often used to represent the absence of a value.
+
+```python
+
+nothing = None
+
+```
+
+
+### bool
+
+```python
+sant = True
+usant = False
+
+bool(sant) # returns True
+
+bool(1) # returns True
+
+bool(0) # returns False
+
+```
+
+Different Types in Python have different "truthy" and "falsy" values
+
+```python
+
+bool([]) # returns False, empty list is falsy
+
+bool([1,2,10]) # returns True, not-empty list is truthy
+
+```
 
 
 ## Strings
