@@ -1,0 +1,20 @@
+{
+  "environment": "web",
+  "source": "python-kurs.md",
+  "format": "html",
+  "prefix": "../../",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-01-14T20:38:30+01:00",
+  "id": "nav-python-course",
+  "duration": 15,
+  "title": "Python Kurs | NAV",
+  "author": "Sondre Halvorsen",
+  "summary": "This course is meant for programmers of some experience to get aquianted with Python.",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": null,
+  "tags": [],
+  "url": "nav-python-course"
+}
