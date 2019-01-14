@@ -89,7 +89,77 @@
       </google-codelab-step>
     
       <google-codelab-step label="Getting Started" duration="0">
-        
+        <h2>REPL</h2>
+<p>The Python can be runned interactivly through the commandline. Running <code>bash python</code> in the commandline start a RELP (Read Evaluate Print Loop ) instance.</p>
+<h3>Example</h3>
+<p><img alt="RELP Session" src="img/ce777527ea5bf2a8.png"></p>
+<h3>Example of basic arithmetic in the REPL</h3>
+<p><img alt="RELP Session with Arithmetic" src="img/c1ed09dbbda96383.png"></p>
+<h3>Exit REPL</h3>
+<p>Windows: Ctrl + Z + Enter<br>Mac/Linux: Ctrl + D</p>
+<h2>Python Standard Library</h2>
+<pre><code>import module_name
+
+from package import module_name
+
+import module_name as mn
+
+</code></pre>
+<h3>The free function help() will provide description of provided module</h3>
+<pre><code>help(module_name)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Built-in Types" duration="0">
+        <p>Scalar types and values</p>
+<ul>
+<li>integers   [5]</li>
+<li>floats     [23.2]</li>
+<li>NoneType   [None]</li>
+<li>bool       [True/False]</li>
+</ul>
+<h2>int</h2>
+<p>unlimited precision signed integer</p>
+<pre><code>my_int = 1
+
+my_new_int = int(22.22)
+
+from_str_int = int(&#34;456&#34;)
+
+</code></pre>
+<h2>float</h2>
+<pre><code>my_float = 323.12
+
+my_next_float = 3e8
+
+my_third_float = 1.7e-35
+</code></pre>
+<h2>None</h2>
+<p>None is the only value of the NoneType. It is most often used to represent the absence of a value.</p>
+<pre><code>nothing = None
+
+</code></pre>
+<h2>bool</h2>
+<pre><code>sant = True
+usant = False
+
+bool(sant) # returns True
+
+bool(1) # returns True
+
+bool(0) # returns False
+
+</code></pre>
+<p>Different Types in Python have different &#34;truthy&#34; and &#34;falsy&#34; values</p>
+<pre><code>bool([]) # returns False, empty list is falsy
+
+bool([1,2,10]) # returns True, not-empty list is truthy
+
+</code></pre>
+
 
       </google-codelab-step>
     
