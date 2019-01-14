@@ -25,9 +25,9 @@ Duration: 5:00
 
 ### Windows
  - Go to https://www.python.org/downloads/
- - Download the latest version of Python (as of this course being written Python 3.7.2)
+ - Download the latest version of Python (as of this course being written: Python 3.7.2)
  - Run the installer
-  - enable PATH
+ - enable PATH
  ![Python Installer image](resources/python_win_install_checkbox.png)
  - click [Install now]
 
