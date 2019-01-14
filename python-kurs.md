@@ -70,19 +70,18 @@ Python comes with "Batteries included", meaning Python comes with a feature rich
 
 
 
-## 2 and 3
+## Python 2 and Python 3
 
-Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2.
+Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2. Practicly this means that new Python packages and application will in most cases be written in Python 3. Python 2 end of life is january 1 2020.
 
-Practicly this means that new Python packages and application will in most cases be written in Python 3. Python 2 end of life is january 1 2020.
-
+![Python 2 to Python 3](resources/2_to_3.jpeg)
 
 ## Zen of Python
 
 The Python community has a highly opiniated view of "good" Python code.
 
 The Zen of Python are the philosophical principles of Python [link](https://www.python.org/dev/peps/pep-0020/)
-
+```python
 Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
@@ -102,6 +101,7 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
+```
 
 ## Getting Started
 
@@ -125,7 +125,7 @@ Mac/Linux: Ctrl + D
 
 import module_name
 
-from package import module_name
+from package_name import module_name
 
 import module_name as mn
 
@@ -207,6 +207,9 @@ bool([]) # returns False, empty list is falsy
 bool([1,2,10]) # returns True, not-empty list is truthy
 
 ```
+
+## Control Structures
+
 
 
 ## Strings
