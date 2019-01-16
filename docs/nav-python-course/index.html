@@ -103,33 +103,6 @@ python3 --version
 
       </google-codelab-step>
     
-      <google-codelab-step label="Zen of Python" duration="0">
-        <p>The Python community has a highly opiniated view of &#34;good&#34; Python code.</p>
-<p>The Zen of Python are the philosophical principles of Python <a href="https://www.python.org/dev/peps/pep-0020/" target="_blank">link</a></p>
-<pre><code>Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren&#39;t special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you&#39;re Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it&#39;s a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let&#39;s do more of those!
-</code></pre>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="Getting Started" duration="0">
         <h2>REPL</h2>
 <p>The Python can be runned interactivly through the commandline. Running <code>bash python</code> in the commandline start a RELP (Read Evaluate Print Loop ) instance.</p>
@@ -238,8 +211,11 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 
       </google-codelab-step>
     
-      <google-codelab-step label="Python Scope" duration="0">
-        
+      <google-codelab-step label="Python Program Structure Flexibility" duration="0">
+        <p>Python can be used as a interactive calculator, a scripting language,  to build web applications, to create machine learning models and the list goes on.<br>To facilitate such broad usescope Python has several different &#34;Structures&#34; to execute Python code in. One of the amazing things with Python is how easy it is to get started with a small script, maybe only to test a small idea or a new module. At the same time if you choose you can build solid structures and define clear abstractions in your program.</p>
+<p>Here is a rough mental model for the different structures we write Python code in, and their strength/weaknesses.</p>
+<p><img alt="Diagram of Python Code Structures" src="img/6b997dd9c15b9f4.png"></p>
+
 
       </google-codelab-step>
     
@@ -289,6 +265,26 @@ dosomething() # Indentation ERROR
 </ul>
 <p>Accessing Zen of Python within Python itself</p>
 <pre><code>import this
+</code></pre>
+<pre><code>Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
 </code></pre>
 
 
@@ -445,7 +441,7 @@ for i in range(len(my_string)):
 
       </google-codelab-step>
     
-      <google-codelab-step label="Excercice - Strings" duration="0">
+      <google-codelab-step label="Excercise - Strings" duration="0">
         <p>Create a script that</p>
 <ol type="1">
 <li>Prints the alphabet</li>
@@ -665,7 +661,7 @@ funny_print(my_funny_joke)
       </google-codelab-step>
     
       <google-codelab-step label="A Python Module" duration="0">
-        <p>Here is an example of a more feature rich web_reader module</p>
+        <p>Here is an example of a more feature rich web_reader module.<br>The <code>&#34;&#34;&#34; &#34;&#34;&#34;</code> block under the function signature is called a docstring and documents the function.</p>
 <pre><code>from urllib import request
 from collections.abc import Sequence
 
@@ -703,12 +699,76 @@ def read_from_url(url: str) -&gt; Sequence:
       </google-codelab-step>
     
       <google-codelab-step label="Python Special Attributes" duration="0">
-        
+        <p>In the Python runtime every element is an object.</p>
+<p>Every object has an identity, a type and a value. An object&#39;s identity never changes once it has been created; you may think of it as the object&#39;s address in memory.</p>
+<p>Modules in Python are also object, and as sutch have attributes we can access. attributes in Python that are named with double underscores<code>__attribute__</code> are called Special Attributes.</p>
+<p>Once such special attribute is: <code>__name__</code>`</p>
+<p>The <code>__name__</code> attribute lets our module discover if it has been imported into another module or if it has been run as main.</p>
+<h3>Example</h3>
+<p>Add the following to the bottom of <code>web_reader.py</code>`</p>
+<pre><code>if __name__ == &#34;__main__&#34;:
+    print_nav_facts()
+
+</code></pre>
+<p>Run the script with:</p>
+<pre><code>python3 web_reader.py
+
+</code></pre>
+<p>Now we can  import the web_reader module without having the code excetute and we can still execute the code from the commandline</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python module/script/program" duration="0">
+        <table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p>Python Module</p>
+</td><td colspan="1" rowspan="1"><p>Convenient import with API</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Python Script</p>
+</td><td colspan="1" rowspan="1"><p>Convenient execution from command line</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Python Program</p>
+</td><td colspan="1" rowspan="1"><p>Generally composed of several modules</p>
+</td></tr>
+</table>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="Objects" duration="0">
-        
+        <p>Python does not really have the samme variables as other languages like C++ or Java. All variables are named references to objects.</p>
+<pre><code>a = 5
+
+b = 3
+
+id(a) # returns the indentity(hash) of the object
+id(b) 
+
+a is b # False
+
+a = b
+
+a is b # True
+</code></pre>
+<p>Note that Python only passes by object reference to functions and methods</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Default Arguments" duration="0">
+        <p>Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.</p>
+<h3>Template</h3>
+<pre><code>def function_name(oaram=default):
+    ...
+
+</code></pre>
+<h3>Example</h3>
+<pre><code>def decode_str(encoding=&#34;utf-8&#34;):
+    ...
+
+</code></pre>
+
 
       </google-codelab-step>
     

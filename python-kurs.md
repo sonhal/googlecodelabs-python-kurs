@@ -253,9 +253,9 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 Python can be used as a interactive calculator, a scripting language,  to build web applications, to create machine learning models and the list goes on.
 To facilitate such broad usescope Python has several different "Structures" to execute Python code in. One of the amazing things with Python is how easy it is to get started with a small script, maybe only to test a small idea or a new module. At the same time if you choose you can build solid structures and define clear abstractions in your program.
 
-Here are the modes we can write and exexute Python code in ranked by: Flexibility -----> Structure
+Here is a rough mental model for the different structures we write Python code in, and their strength/weaknesses.
 
-
+![Diagram of Python Code Structures](resources/py_stability.png)
 
 
 ## Python whitespace
@@ -568,7 +568,7 @@ for i in range(len(my_string)):
 
 
 
-## Excercice - Strings
+## Excercise - Strings
 
 Create a script that
  1. Prints the alphabet
@@ -877,7 +877,8 @@ The function should not take any arguments
 
 ## A Python Module
 
-Here is an example of a more feature rich web_reader module
+Here is an example of a more feature rich web_reader module.
+The ```""" """``` block under the function signature is called a docstring and documents the function.
 
 ```python
 from urllib import request
@@ -929,14 +930,82 @@ Once such special attribute is: ```__name__````
 
 The ```__name__``` attribute lets our module discover if it has been imported into another module or if it has been run as main.
 
-
-
 #### Example
+Add the following to the bottom of ``` web_reader.py ````
+
+```python
+
+if __name__ == "__main__":
+    print_nav_facts()
+
+```
+
+Run the script with:
+
+```bash
+
+python3 web_reader.py
+
+```
+
+Now we can  import the web_reader module without having the code excetute and we can still execute the code from the commandline
+
+
+## Python module/script/program
+
+| Concept     | Description  |
+| ------------- |:-------------:|
+| Python Module    | Convenient import with API |
+| Python Script     | Convenient execution from command line | 
+| Python Program | Generally composed of several modules | 
 
 
 
 ## Objects
 
+
+Python does not really have the samme variables as other languages like C++ or Java. All variables are named references to objects.
+
+```python
+a = 5
+
+b = 3
+
+id(a) # returns the indentity(hash) of the object
+id(b) 
+
+a is b # False
+
+a = b
+
+a is b # True
+```
+
+Note that Python only passes by object reference to functions and methods
+
+
+
+## Default Arguments
+
+Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.
+
+
+#### Template
+```python
+
+def function_name(oaram=default):
+    ...
+
+```
+
+#### Example
+
+```python
+
+def decode_str(encoding="utf-8"):
+    ...
+
+```
 
 ## Exceptions
 
