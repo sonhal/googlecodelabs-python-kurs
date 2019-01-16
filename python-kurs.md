@@ -23,7 +23,7 @@ Developed by Guido van Rossum
 
 
 ## Installation
-Duration: 5:00
+Duration: 10:00
 
 ### Windows
  - Go to https://www.python.org/downloads/
@@ -59,6 +59,7 @@ brew install python3
 
 
 ## Table-Of-Contents
+Duration: 1:00
 
  There are several tools installed with the Python interpeter. Here are some of them:
 
@@ -91,6 +92,7 @@ Objects are Python’s abstraction for data. All data in a Python program is rep
 
 
 ## Python 2 and Python 3
+Duration: 1:00
 
 Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2. Practicly this means that new Python packages and application will in most cases be written in Python 3. 
 
@@ -100,6 +102,7 @@ Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but
 
 
 ## Getting Started
+Duration: 10:00
 
 ### REPL
 The Python can be runned interactivly through the commandline. Running ```bash python``` in the commandline start a RELP (Read Evaluate Print Loop ) instance.
@@ -177,7 +180,8 @@ help() # Invoke the built-in help system. (This function is intended for interac
 ```
 
 
-## Built-in Types
+## Fundemental Built-in Types
+Duration: 5:00
 
 Scalar types and values
 
@@ -250,6 +254,8 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 ```
 
 ## Python Program Structure Flexibility
+Duration: 5:00
+
 Python can be used as a interactive calculator, a scripting language,  to build web applications, to create machine learning models and the list goes on.
 To facilitate such broad usescope Python has several different "Structures" to execute Python code in. One of the amazing things with Python is how easy it is to get started with a small script, maybe only to test a small idea or a new module. At the same time if you choose you can build solid structures and define clear abstractions in your program.
 
@@ -258,7 +264,8 @@ Here is a rough mental model for the different structures we write Python code i
 ![Diagram of Python Code Structures](resources/py_stability.png)
 
 
-## Python whitespace
+## Python Whitespace
+Duration: 5:00
 
 The control structure statements in python use colon ( : ) to indicate termination of the statement.
 After a colon ( : ) in a statement the body of the construct should follow. In Python this block should be indented.
@@ -303,6 +310,7 @@ Indentation levels in Python code matches the structure of the program.
 
 
 ## Python Culture
+Duration: 3:00
 
 Python has a large and very opinionated community. Writing Python code that follows the community standards is recognised as writing pythonic code.
 
@@ -342,6 +350,7 @@ Namespaces are one honking great idea -- let's do more of those!
 ```
 
 ## Control Structures
+Duration: 3:00
 
 ## Conditional Statements
 
@@ -393,6 +402,7 @@ else:
 
 
 ## While Loops
+Duration: 3:00
 
 
 #### Template
@@ -444,6 +454,7 @@ print("this will be printed after break")
 ---
 
 ## For Loops
+Duration: 3:00
 
 for-loops in Python are really what is called foreach loops in language like Java
 
@@ -470,6 +481,7 @@ for number in range(10):
 
 
 ## Strings
+Duration: 8:00
 
 Python String has the type of ```str ```
 
@@ -569,6 +581,7 @@ for i in range(len(my_string)):
 
 
 ## Excercise - Strings
+Duration: 10:00
 
 Create a script that
  1. Prints the alphabet
@@ -579,7 +592,9 @@ Create a script that
 
 ## Collections
 
+
 ## Lists
+Duration: 10:00
 
 Python lists are the workhorse of the Python data structures. It is a mutable sequence of objects. Note that a list can contain different data types, but creating and using lists containing different types would be considered bad practice.
 
@@ -650,6 +665,7 @@ print(my_list) # [1, 2, 3, 4, 'Mhhh this might cause some confusion for people u
 
 
 ## Dictonaries
+Duration: 10:00
 
 Python dictionaries are mutable mappings of keys to values. Dictionaries are fundemental to Python and many internal structures in the Python runtime are implemented using dictonaries.
 
@@ -743,6 +759,7 @@ print(my_dict.values()) # ["a", "b", "c"]
 
 
 ## Modularity
+Duration: 3:00
 
 If you want to write a somewhat longer program, you are better off writing code in files, known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.
  
@@ -871,11 +888,12 @@ Duration: 5:00
 
 Refactor the web_reader module.
 
-Place the code into functions named ```nav_facts```
+Wrap the code in a function named ```nav_facts```
 The function should not take any arguments
 
 
 ## A Python Module
+Duration: 5:00
 
 Here is an example of a more feature rich web_reader module.
 The ```""" """``` block under the function signature is called a docstring and documents the function.
@@ -918,7 +936,10 @@ def func(param1: int, param2: str):
 
 ```
 
+Type anotations in Python are purely for documentation and static code analysis tools, like type hinting in IDEs
+
 ## Python Special Attributes
+Duration: 5:00
 
 In the Python runtime every element is an object.
 
@@ -952,6 +973,7 @@ Now we can  import the web_reader module without having the code excetute and we
 
 
 ## Python module/script/program
+Duration: 1:00
 
 | Concept     | Description  |
 | ------------- |:-------------:|
@@ -962,6 +984,7 @@ Now we can  import the web_reader module without having the code excetute and we
 
 
 ## Objects
+Duration: 10:00
 
 
 Python does not really have the samme variables as other languages like C++ or Java. All variables are named references to objects.
@@ -986,6 +1009,7 @@ Note that Python only passes by object reference to functions and methods
 
 
 ## Default Arguments
+Duration: 5:00
 
 Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.
 
@@ -993,7 +1017,7 @@ Python functions can be defined with default arguments. That is arguments that a
 #### Template
 ```python
 
-def function_name(oaram=default):
+def function_name(param=default):
     ...
 
 ```
