@@ -46,35 +46,58 @@
 <p>Test that Python is properly installed by running</p>
 <pre><code>python --version
 </code></pre>
-<p>in a CMD/Powershell shell.</p>
+<p>in a CMD/Powershell shell.<br>In case of errors reference the - Using Python on Windows page: <a href="https://docs.python.org/3/using/windows.html" target="_blank">link</a></p>
+<h2>Linux</h2>
+<p>Ubuntu</p>
+<pre><code>sudo apt-get update
+sudo apt-get install python3.7
+python3 --version
+</code></pre>
 <h2>Mac</h2>
-<p>Same procedure as Windows but the command to be run in the terminal to check if Python has been correctly installed is:</p>
-<pre><code>python3 --version
+<p>On macOS, the best way to install Python 3 is to use Homebrew. Not familiar with homebrew? <a href="https://brew.sh/" target="_blank">link</a></p>
+<pre><code>brew install python3
 </code></pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Table-Of-Contents" duration="0">
-        <p>There are several tools installed with the Python interpeter.</p>
+        <p>There are several tools installed with the Python interpeter. Here are some of them:</p>
+<table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p>python interpreter</p>
+</td><td colspan="1" rowspan="1"><p>The python interpreter. The executable that can be called directly from the commandline/terminal to start a new interactive python session (REPL) or to run python modules/files/packages</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>pip</p>
+</td><td colspan="1" rowspan="1"><p>The Python package manager. The official Python package manager. Lets the user download and manage third-party packages hosted on the Python package index (PyPI)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>IDLE</p>
+</td><td colspan="1" rowspan="1"><p>IDLE is Python&#39;s Integrated Development and Learning Environment. Its a Python IDE for and by Python</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>pydoc</p>
+</td><td colspan="1" rowspan="1"><p>The pydoc module automatically generates documentation from Python modules.</p>
+</td></tr>
+</table>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Python a overview" duration="5">
-        <ul>
+      <google-codelab-step label="Python a overview" duration="2">
+        <p>Objects are Python&#39;s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann&#39;s model of a &#34;stored program computer,&#34; code is also represented by objects.)</p>
+<ul>
 <li>Python is strongly typed and dynamically typed.</li>
 <li>Python is a general porpouse progragramming language. It is not the best choice for time critical or memory constrained tasks.</li>
 <li>Python is really a compiled programming language, but it acts as a interpred language.</li>
 <li>There exist different implementation of Python. The most common and the one we will use in this course will be CPython.</li>
+<li>Python comes with &#34;Batteries included&#34;, meaning Python comes with a feature rich standard libary.</li>
 </ul>
-<p>Python comes with &#34;Batteries included&#34;, meaning Python comes with a feature rich standard libary.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Python 2 and Python 3" duration="0">
-        <p>Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2. Practicly this means that new Python packages and application will in most cases be written in Python 3. Python 2 end of life is january 1 2020.</p>
+        <p>Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2. Practicly this means that new Python packages and application will in most cases be written in Python 3.</p>
+<h2>Python 2 end of life is january 1 2020.</h2>
 <p><img alt="Python 2 to Python 3" src="img/41d6e8981000e655.jpeg"></p>
 
 
@@ -117,15 +140,46 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <h3>Exit REPL</h3>
 <p>Windows: Ctrl + Z + Enter<br>Mac/Linux: Ctrl + D</p>
 <h2>Python Standard Library</h2>
+<p>The Python Standard Library is large. Python follows a philosophy of; &#34;Batteries included&#34;. Python is ready to go out of the box with modules to do a vast array of tasks.</p>
 <pre><code>import module_name
 
-from package_name import module_name
+from module_name import function_name
 
-import module_name as mn
+import module_name as alias
+
+from module_name import function_name as alias
+
+</code></pre>
+<p>Example with the math module</p>
+<pre><code>import math # import only the module
+
+result = math.factorial(2)
+
+from math import factorial # import the factorial function from the math module
+result = factorial(2)
 
 </code></pre>
 <h3>The free function help() will provide description of provided module</h3>
 <pre><code>help(module_name)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Built-in Functions" duration="0">
+        <p>The Python interpreter has a number of functions and types built into it that are always available.<br>The full list of Python 3 built-in functions can be found here: <a href="https://docs.python.org/3/library/functions.html" target="_blank">link</a></p>
+<h2>Important Built-in Functions</h2>
+<pre><code>len() # Return the length (the number of items) of an object. 
+
+input() # The function then reads a line from input, converts it to a string
+
+print() # Prints to stdout
+
+bool() # returns True or False
+
+help() # Invoke the built-in help system. (This function is intended for interactive use(REPL).)
+
 
 </code></pre>
 
@@ -172,11 +226,69 @@ bool(1) # returns True
 bool(0) # returns False
 
 </code></pre>
-<p>Different Types in Python have different &#34;truthy&#34; and &#34;falsy&#34; values</p>
+<h3>Different Types in Python have different &#34;truthy&#34; and &#34;falsy&#34; values</h3>
 <pre><code>bool([]) # returns False, empty list is falsy
 
 bool([1,2,10]) # returns True, not-empty list is truthy
 
+
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Scope" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python whitespace" duration="0">
+        <p>The control structure statements in python use colon ( : ) to indicate termination of the statement.<br>After a colon ( : ) in a statement the body of the construct should follow. In Python this block should be indented.<br>By convention this indentation level is 4 spaces.</p>
+<p>; at the end of statements are not needed.</p>
+<pre><code>if var1 == var2:
+    dosomething() # Note 4 space indentation
+
+if var1 == var2:
+dosomething() # Indentation ERROR
+
+</code></pre>
+<p>Every new indentation level defines a new block</p>
+<pre><code>if var1 == var2:
+    dosomething()
+
+    if var1 is True:
+        dosomethingmore()
+
+</code></pre>
+<p>Indentation levels in Python code matches the structure of the program.</p>
+<h2>Significant whitespace Pros</h2>
+<ol type="1">
+<li>Forces the writer to write readable code</li>
+<li>Less clutter</li>
+<li>Human and Computer stays in sync</li>
+</ol>
+<h2>Whitespace rules</h2>
+<ol type="1">
+<li>Prefer four spaces</li>
+<li>Never mix spaces and tabs</li>
+<li>Be consistent on consecutive lines</li>
+<li>Only deviate to improve readability</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Culture" duration="0">
+        <p>Python has a large and very opinionated community. Writing Python code that follows the community standards is recognised as writing pythonic code.</p>
+<p>Development of the Python language is managed through PEPs (Python Enhancement Proposals)</p>
+<h2>Notable PEPs</h2>
+<ul>
+<li>PEP 8 - Style Guide for Python Code <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">link</a></li>
+<li>PEP 20 - The Zen of Python <a href="https://www.python.org/dev/peps/pep-0020/" target="_blank">link</a></li>
+</ul>
+<p>Accessing Zen of Python within Python itself</p>
+<pre><code>import this
 </code></pre>
 
 
@@ -187,8 +299,160 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 
       </google-codelab-step>
     
+      <google-codelab-step label="Conditional Statements" duration="0">
+        <h3>Template</h3>
+<pre><code>if expr:
+    print(&#34;expr is True&#34;)
+
+</code></pre>
+<h3>Example</h3>
+<pre><code>if True:
+    print(&#34;true!&#34;) # will be printed
+
+if False:
+    print(&#34;false&#34;) # will not be printed
+
+</code></pre>
+<p>Python will implicitly convert expresions to a bool value. Both of the print() statements in the block under will execute</p>
+<pre><code>if bool(&#34;yay&#34;):
+    print(&#34;yoo&#34;)
+
+if &#34;yay&#34;:
+    print(&#34;yoo&#34;)
+
+</code></pre>
+<h3>If Else</h3>
+<pre><code>if 30 &lt; 10:
+    print(&#34;30 is smaller than 10&#34;)
+else:
+    print(&#34;30 is bigger than 10&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="While Loops" duration="0">
+        <h3>Template</h3>
+<pre><code>while expr:
+    print(&#34;looping while expr is true&#34;)
+
+</code></pre>
+<h3>Example</h3>
+<p>Print and decrement</p>
+<pre><code>abc = 10
+
+while abc != 0:
+    print(abc)
+    abc -= 1
+
+</code></pre>
+<p>Infinite loop</p>
+<pre><code>abc = 10
+
+while True
+    print(abc)
+    abc -= 1
+
+</code></pre>
+<h3>break</h3>
+<p>break statement terminates the loop and transfers execution to the first statement after the loop.</p>
+<pre><code>while True:
+    if expr:
+        break
+print(&#34;this will be printed after break&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="For Loops" duration="0">
+        <p>for-loops in Python are really what is called foreach loops in language like Java</p>
+<p>for-loops iterate over iterables, item by item.</p>
+<h3>Template</h3>
+<pre><code>for item in iterable: 
+    dosomething(item)
+
+</code></pre>
+<h3>Examples</h3>
+<pre><code>for number in range(10):
+    print(number) 
+
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Strings" duration="0">
-        
+        <p>Python String has the type of <code>str</code></p>
+<p>Definition of  <code>str</code>: Immutable sequences of Unicode codepoints<br>NOTE: Default encoding for Python strings are utf-8</p>
+<h3>String Literals</h3>
+<pre><code>&#34;this is a string&#34; # doblequote
+
+&#39;this is also a string&#39; # singlequoute
+
+
+&#34; string with single quoute &#39;inside&#39; &#34; # doublequote with singlequote inside
+
+&#39; string with single quoute &#34;inside&#34; &#39; # singlequote with doublequote inside
+
+&#39; string with escaped singlequote \&#39; ! &#39; # escape singlequote
+
+&#34;this will result in error&#39; # single and double quote
+
+</code></pre>
+<h3>Assignment</h3>
+<pre><code>string_variable = &#34;string&#34;
+
+</code></pre>
+<h3>Multiline Strings</h3>
+<pre><code>&#34;&#34;&#34; This is
+    a really long
+    string! &#34;&#34;&#34;
+
+</code></pre>
+<p>The str type has a corresponding str() function to get the str representation of the object.</p>
+<h3>Template</h3>
+<pre><code>my_string = str(variable)
+
+</code></pre>
+<h3>Example</h3>
+<pre><code>string_int = str(456) # &#34;456&#34;
+
+string_bool = str(True) # &#34;True&#34;
+
+</code></pre>
+<h2>More about Python Strings</h2>
+<p>Characters in a string can be looped over like a sequence</p>
+<pre><code>my_string = &#34;ABCD&#34;
+
+# This loop will print A B C D
+for ch in my_string:
+    print(ch)
+
+</code></pre>
+<p>Characters in a string can be indexed like a sequence</p>
+<pre><code>my_string = &#34;ABCD&#34;
+
+# This loop will print A B C D
+for i in range(len(my_string)):
+    print(my_string[i])
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Excercice - Strings" duration="0">
+        <p>Create a script that</p>
+<ol type="1">
+<li>Prints the alphabet</li>
+<li>Prints every even numbered character</li>
+<li>Prints every odd numbered character</li>
+</ol>
+
 
       </google-codelab-step>
     
@@ -197,7 +461,248 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 
       </google-codelab-step>
     
-      <google-codelab-step label="Modules" duration="0">
+      <google-codelab-step label="Lists" duration="0">
+        <p>Python lists are the workhorse of the Python data structures. It is a mutable sequence of objects. Note that a list can contain different data types, but creating and using lists containing different types would be considered bad practice.</p>
+<p>Python lists have the type <code>list</code></p>
+<h3>Template</h3>
+<pre><code>my_list = [] # create a empty list
+
+also_my_list = list() # create a empty list with the list function
+
+cool_list = [&#34;Some&#34;, &#34;Data&#34;, &#34;Items&#34;]
+
+
+</code></pre>
+<h3>Lists can be looped over</h3>
+<pre><code>my_list = [1, 2, 4, 1, 9]
+
+sum = 0
+for num in my_list:
+    sum += num
+
+print(sum) # 17
+
+
+</code></pre>
+<h2>Lists items can be accessed by index</h2>
+<pre><code>my_list = [&#34;I&#34;, &#34;am&#34;, &#34;having&#34;, &#34;fun&#34;]
+
+element= my_list[3]
+
+print(element) # fun
+
+</code></pre>
+<h2>Lists can be changed by index</h2>
+<pre><code>my_list = [&#34;I&#34;, &#34;am&#34;, &#34;having&#34;, &#34;fun&#34;]
+
+my_list[3] = &#34;a blast&#34;
+
+print(my_list) # [&#39;I&#39;, &#39;am&#39;, &#39;having&#39;, &#39;a blast&#39;]
+
+</code></pre>
+<h2>Appending to lists</h2>
+<pre><code>my_list = [1, 2, 3, 4]
+
+my_list.append(&#34;Mhhh this might cause some confusion for people using my code&#34;)
+
+print(my_list) # [1, 2, 3, 4, &#39;Mhhh this might cause some confusion for people using my code&#39;]
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Dictonaries" duration="0">
+        <p>Python dictionaries are mutable mappings of keys to values. Dictionaries are fundemental to Python and many internal structures in the Python runtime are implemented using dictonaries.</p>
+<p>Python dictionaries have the type <code>dict</code></p>
+<h2>Creating Dicts</h2>
+<h3>Template</h3>
+<p>Dictionaries can be created by placing a comma-separated list of key: value pairs within braces, for example: <code>{&#39;jack&#39;: 4098, &#39;sjoerd&#39;: 4127}</code> or <code>{4098: &#39;jack&#39;, 4127: &#39;sjoerd&#39;}</code>, or by the dict constructor <code>dict()</code>.</p>
+<pre><code>{key1: value1, key2: value2}
+</code></pre>
+<p>A dictionary&#39;s keys are almost arbitrary values. Values that are not hashable, that is, values containing lists, dictionaries or other mutable types (that are compared by value rather than by object identity) may not be used as keys</p>
+<h3>Examples</h3>
+<pre><code>locations = {&#34;Sondre&#34;: &#34;Oslo&#34;, &#34;Grandpa&#34;: &#34;heaven&#34;}
+
+phone_book = {&#34;girlfriend&#34;: 90392939, &#34;pizza_shop&#34;: 12321291}
+
+</code></pre>
+<h2>Accessing Dicts</h2>
+<pre><code>locations = {&#34;Sondre&#34;: &#34;Oslo&#34;, &#34;Grandpa&#34;: &#34;heaven&#34;}
+sondres_location = locations[&#34;Sondre&#34;]
+
+print(sondres_location) # Oslo
+
+
+</code></pre>
+<h2>Appending</h2>
+<pre><code>phone_book = {&#34;girlfriend&#34;: 90392939, &#34;pizza_shop&#34;: 12321291}
+
+phone_book[&#34;fish_tacos&#34;] = 22310943
+
+phone_book[1230924] = &#34;Whoopsi this might be a mistake, but it is valid Python code&#34;
+
+
+print(phone_book) # {&#39;girlfriend&#39;: 90392939, &#39;pizza_shop&#39;: 12321291, &#39;fish_tacos&#39;: 22310943, 1230924: &#39;Whoopsi this might be a mistake, but it is valid Python code&#39;}
+
+</code></pre>
+<h2>Dict Methods</h2>
+<p>For the full list of dict methods: <a href="https://docs.python.org/3/library/stdtypes.html?highlight=dictionary#dict" target="_blank">link</a></p>
+<h4>items()</h4>
+<p>Get the dict items. Returns all the key, value pair as a list of tuples</p>
+<pre><code>my_dict = {1: &#34;a&#34;, 2: &#34;b&#34;, 3: &#34;c&#34;}
+
+print(my_dict.items()) # [(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]
+
+</code></pre>
+<h4>keys()</h4>
+<p>Returns all the keys in the dict as a list</p>
+<pre><code>my_dict = {1: &#34;a&#34;, 2: &#34;b&#34;, 3: &#34;c&#34;}
+
+print(my_dict.keys()) # [1, 2, 3]
+
+</code></pre>
+<h4>values()</h4>
+<p>Returns all the values in the dict as a list</p>
+<pre><code>my_dict = {1: &#34;a&#34;, 2: &#34;b&#34;, 3: &#34;c&#34;}
+
+print(my_dict.values()) # [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;]
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Modularity" duration="0">
+        <p>If you want to write a somewhat longer program, you are better off writing code in files, known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you&#39;ve written in several programs without copying its definition into each program.</p>
+<p>To support this, Python has a way to put definitions in a file and use them in a script. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (The file executed first by the python interpreter eks: <code>python main.py</code>).</p>
+<p>A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py</p>
+<h3>During the next steps of the course we will write a small Python program for fetching data from the internett.</h3>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Starting a new project" duration="2">
+        <p>To start a new Python project</p>
+<ol type="1">
+<li>Create a new folder with the project name:<br><code>bash<br>mkdir python-course-project<br></code></li>
+<li>Create a new python script file in the project directory:<br><code>bash<br>cd python-course-project<br>touch web_reader.py<br></code></li>
+</ol>
+<p>Now we are ready to start writting a Python script</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Writting our first Python module" duration="5">
+        <p>Open the web_reader.py in you preferred Python editor</p>
+<p>Copy and paste:</p>
+<pre><code>from urllib import request
+
+
+with request.urlopen(&#34;https://gist.githubusercontent.com/sonhal/db9c2f7869c6937bdfed009c5381f2de/raw/a63d7b16a14247e13ddebfe4f064a2987b3ae011/python_course_data.txt&#34;) as file:
+    words = file.read().decode(&#34;utf-8&#34;).split()
+
+    numbers_in_the_text = []
+    for word in words:
+        print(word)
+        if word.isdigit():
+            int_word = int(word)
+            numbers_in_the_text.append(int_word)
+    print(numbers_in_the_text)
+</code></pre>
+<p>There is a bug in the code, but we will ignore it for now (did you catch it?)</p>
+<p>Now lest execute it</p>
+<pre><code>python3 web_reader.py
+</code></pre>
+<p>The result printed to the terminal should be:</p>
+<pre><code>[1, 456]
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise - Modules" duration="5">
+        <p>Change the code python code in web_reader.py to print out every word in the result from the url.</p>
+<p>What does the text contain?</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating Functions" duration="10">
+        <p>If you try to import the web_reader module. Either into a REPL instance or into another module you will quickly realise that the code in the module is run immediately. Thats not very flexible!<br>To make our code more flexible by giving the users of our module the opprotunity to descide when and what kind of functionality they would like to use we define a function.</p>
+<h2>Python Functions</h2>
+<h2>Defining Functions</h2>
+<h3>Template</h3>
+<pre><code>def my_function(parameter1, parameter2):
+    &#34;&#34;&#34; Codeblock &#34;&#34;&#34;
+
+</code></pre>
+<h3>Example</h3>
+<pre><code>def add(a, b):
+    return a + b
+
+</code></pre>
+<h4>Void functions in Python does not need any special syntax</h4>
+<pre><code>def funny_print(text):
+    print(f&#34;HaHaHa {text}&#34;) # Note the f&#34;&#34; string syntax
+
+</code></pre>
+<p>Functions that does not return explicitly returns None</p>
+<h2>Using Functions</h2>
+<pre><code>my_funny_joke = &#34;boogers&#34;
+funny_print(my_funny_joke)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise - Functions" duration="5">
+        <p>Refactor the web_reader module.</p>
+<p>Place the code into functions named <code>nav_facts</code><br>The function should not take any arguments</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="A Python Module" duration="0">
+        <p>Here is an example of a more feature rich web_reader module</p>
+<pre><code>from urllib import request
+from collections.abc import Sequence
+
+# -&gt; says this function returns None
+def print_nav_facts() -&gt; None:
+    &#34;&#34;&#34;
+    Prints facts about NAV
+    :return: None
+    &#34;&#34;&#34;
+    url = &#34;https://gist.githubusercontent.com/sonhal/db9c2f7869c6937bdfed009c5381f2de/raw/a63d7b16a14247e13ddebfe4f064a2987b3ae011/python_course_data.txt&#34;
+    words = read_from_url(url=url)
+    for word in words:
+        print(word)
+
+# -&gt; says this function returns a Sequence
+def read_from_url(url: str) -&gt; Sequence:
+    &#34;&#34;&#34;
+    :param url: str with url to resource
+    :return: list of returned data split by space
+    &#34;&#34;&#34;
+    with request.urlopen(url) as file:
+        words = file.read().decode(&#34;utf-8&#34;).split()
+        return words
+
+</code></pre>
+<p>Note the type annotations in these functions</p>
+<p>-&gt; indicates that the function returns the type that follows</p>
+<p>parameters in functions can be type annotated as so:</p>
+<pre><code>def func(param1: int, param2: str):
+    pass # pass gives us the opporotunity to mock up functions
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Special Attributes" duration="0">
         
 
       </google-codelab-step>
