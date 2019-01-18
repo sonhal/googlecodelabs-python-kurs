@@ -103,6 +103,66 @@ python3 --version
 
       </google-codelab-step>
     
+      <google-codelab-step label="Python Objects and Types" duration="0">
+        <p>In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.</p>
+<p>If you can, you should always use Python´s built-in types</p>
+<table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p>Numbers</p>
+</td><td colspan="1" rowspan="1"><p>12 , 343.34 , Decimal()</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Strings</p>
+</td><td colspan="1" rowspan="1"><p>&#34;sauna&#34;, ‘python&#39;</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Lists</p>
+</td><td colspan="1" rowspan="1"><p>[1, &#34;two, [ 4, 5] ]</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Dictonaries</p>
+</td><td colspan="1" rowspan="1"><p>{&#34;breakfast&#34;: &#34;eggs&#34;, &#34;number&#34;: 1, &#34;nested&#34;: {1: &#34;element&#34;}}</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Tuples</p>
+</td><td colspan="1" rowspan="1"><p>(1, &#34;bacon&#34;, 13.2))</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Sets</p>
+</td><td colspan="1" rowspan="1"><p>set(aaaa) # {&#34;a&#34;}</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Booleans</p>
+</td><td colspan="1" rowspan="1"><p>True, False</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>NoneType</p>
+</td><td colspan="1" rowspan="1"><p>None</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python and Dynamic Typing" duration="0">
+        <p>In Python you do not declare variables with type</p>
+<p>Java</p>
+<pre><code>int myInt = 5;
+
+</code></pre>
+<p>Python</p>
+<pre><code>my_int  = 5
+
+</code></pre>
+<p>In Python, types are determined automatically at runtime, not in respone to declarations in your code.</p>
+<h3>This means this is possible in Python</h3>
+<pre><code>my_var = 1
+
+my_var += 1 # 2
+
+my_var = &#34;hello&#34;
+
+my_var += &#34; friend&#34; # hello friend&#34;
+
+</code></pre>
+<p>Under the hood Python uses types, but these types live in the objects you create. Not in the references to them.</p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Getting Started" duration="10">
         <h2>REPL</h2>
 <p>The Python can be runned interactivly through the commandline. Running <code>bash python</code> in the commandline start a RELP (Read Evaluate Print Loop ) instance.</p>
@@ -171,9 +231,9 @@ help() # Invoke the built-in help system. (This function is intended for interac
 <p>unlimited precision signed integer</p>
 <pre><code>my_int = 1
 
-my_new_int = int(22.22)
+my_new_int = int(22.22) # 22
 
-from_str_int = int(&#34;456&#34;)
+from_str_int = int(&#34;456&#34;) # 456
 
 </code></pre>
 <h2>float</h2>
@@ -508,6 +568,35 @@ print(my_list) # [1, 2, 3, 4, &#39;Mhhh this might cause some confusion for peop
 
       </google-codelab-step>
     
+      <google-codelab-step label="Tuples" duration="2">
+        <p>Tuples work like lists, except that elements in tuples cannot change place. Tupels are immutable. After a tuple has been created, the length of the tuple cannot change.</p>
+<h4>A Tuple is a ordered collection of arbitrary Python objects</h4>
+<h3>Example</h3>
+<pre><code># create tuple
+my_tuple = (1, 2, 3, 4)
+
+
+#access contents
+element = my_tuple[1]
+
+
+</code></pre>
+<h3>In Action</h3>
+<pre><code>new_tuple = (1, 2) + (3 ,4) # (1 , 2, 3 , 4)
+
+trippeled_tuple = (1, 2) * 3 # (1, 2, 1, 2, 1, 2)
+
+</code></pre>
+<p>To create a tuple with only one element, leave a trailing ,</p>
+<pre><code>only_int = (1) # 1
+
+tuple_with_int = (1,) # (1, )
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Dictonaries" duration="10">
         <p>Python dictionaries are mutable mappings of keys to values. Dictionaries are fundemental to Python and many internal structures in the Python runtime are implemented using dictonaries.</p>
 <p>Python dictionaries have the type <code>dict</code></p>
@@ -645,10 +734,49 @@ with request.urlopen(&#34;https://gist.githubusercontent.com/sonhal/db9c2f7869c6
 </code></pre>
 <p>Functions that does not return explicitly returns None</p>
 <h2>Using Functions</h2>
+<p>Normal argument passing</p>
 <pre><code>my_funny_joke = &#34;boogers&#34;
 funny_print(my_funny_joke)
 
 </code></pre>
+<p>Passing as keyword argument</p>
+<pre><code>my_funny_joke = &#34;boogers&#34;
+funny_print(text=my_funny_joke) # more readable perhaps
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Default Arguments" duration="5">
+        <p>Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.</p>
+<h3>Template</h3>
+<pre><code>def function_name(param=default):
+    ...
+
+</code></pre>
+<h3>Example</h3>
+<pre><code>def decode_str(encoding=&#34;utf-8&#34;):
+    ...
+
+</code></pre>
+<pre><code># Define function
+def say_meow(times=1):
+    &#34;&#34;&#34; Function that prints &#39;Meow!&#39; &#34;&#34;&#34;
+
+    for _ in range(times):
+        print(&#34;Meow!&#34;)
+
+
+# Use function
+
+say_meow() # Meow!
+
+say_meow(2) # Meow! Meow!
+
+
+</code></pre>
+<h3>NB: Do not use mutable variables as default values</h3>
 
 
       </google-codelab-step>
@@ -757,22 +885,6 @@ a is b # True
 
       </google-codelab-step>
     
-      <google-codelab-step label="Default Arguments" duration="5">
-        <p>Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.</p>
-<h3>Template</h3>
-<pre><code>def function_name(param=default):
-    ...
-
-</code></pre>
-<h3>Example</h3>
-<pre><code>def decode_str(encoding=&#34;utf-8&#34;):
-    ...
-
-</code></pre>
-
-
-      </google-codelab-step>
-    
       <google-codelab-step label="Exceptions" duration="0">
         
 
@@ -783,17 +895,145 @@ a is b # True
 
       </google-codelab-step>
     
-      <google-codelab-step label="Classes" duration="0">
-        
+      <google-codelab-step label="Python Classes" duration="0">
+        <p>In Python as we have seen it is not necessary to create classes to structure our code. Create classes to hold our code and data will in many cases be regarded as bad practice by seasoned pythonistas. Python is a flexible language. It is up to the writer to decide what level of structure and abstraction the code needs.</p>
+<p>The convention is to use CammelCase for Python class names.</p>
+<h3>Template</h3>
+<pre><code>class ClassName:
+    pass
+
+
+</code></pre>
+<p>In Python the constructor is handled by the language. Python instead exposes the  <strong>int</strong>() method. For all practical purposes the <strong>init</strong>() method can be thought of like a contructor.</p>
+<pre><code>class ClassName:
+
+    def __init__(arg1, arg2):
+        pass
+
+
+</code></pre>
+
 
       </google-codelab-step>
     
-      <google-codelab-step label="File io" duration="0">
+      <google-codelab-step label="Magic Methods" duration="0">
+        <p>Python&#39;s classes are famous for their magic methods, commonly called dunder (double underscore) methods. These are much like the Special Attributes discussed in the Modularity part of the course.</p>
+<p>they are named in the same way:</p>
+<pre><code>__methodname__
+
+</code></pre>
+<p>Most used of them is the <code>__init__</code>` method, used for class instansiation. They&#39;re special methods that you can define to add &#34;magic&#34; to your classes.</p>
+<h2>Here are some commonly used magic methods</h2>
+<h3><strong>str</strong>_</h3>
+<p>Defines behavior for when str() is called on an instance of your class.</p>
+<pre><code>__str__(self)
+
+</code></pre>
+<h4>Example</h4>
+<pre><code>class PrintableClass:
+
+     def __init(self, name: str):
+        self.name = name
+    
+
+    def __str__(self):
+        return f&#34;PrintableClass(name={self.name})&#34;
+
+</code></pre>
+<h4><strong>repr</strong></h4>
+<p>Defines behavior for when repr() is called on an instance of your class. The major difference between str() and repr() is intended audience. repr() is intended to produce output that is mostly machine-readable (in many cases, it could be valid Python code even), whereas str() is intended to be human-readable.</p>
+<pre><code>__repr__(self)
+
+</code></pre>
+<h4><strong>len</strong></h4>
+<p>Returns the length of the container. Part of the protocol for both immutable and mutable containers.</p>
+<pre><code>__len__(self)
+
+</code></pre>
+<h4>Example</h4>
+<pre><code>class SchoolBus:
+
+    def __init__(self, *students):
+        self._students = list(students)
+
+    
+    def __len__(self):
+        return len(self._students)
+
+
+
+school_bus = SchoolBus(&#34;Carl&#34;, &#34;Victoria&#34;, &#34;Mike&#34;)
+
+print(len(school_bus)) # 3
+
+</code></pre>
+<h4>Read more about Python magic methods here</h4>
+<p><a href="https://rszalski.github.io/magicmethods/" target="_blank">link</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Extra About Python Classes" duration="0">
+        <h3>NOTE:</h3>
+<ul>
+<li>Python does not have a keyword for interfaces</li>
+<li>Python does have multiple inheritance</li>
+</ul>
+<p>The most common use of multiple inheritance in Python is &#34;Mixin&#34; classes. Classes that provide extra functionality through inheritance. Example: LoggingMixin, AuthenticationMixin.</p>
+<pre><code>class MyFunClass(CoolMixin, EvenCoolerMixin):
+    pass
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Instance &amp; Class variables" duration="0">
+        <p>Most beginners and even some advanced Python programmers do not understand the distinction between instance and class variables. Their lack of understanding forces them to use these different types of variables incorrectly. Let&#39;s understand them.</p>
+<p>The basic difference is:</p>
+<ul>
+<li>Instance variables are for data which is unique to every object</li>
+<li>Class variables are for data shared between different instances of a class</li>
+</ul>
+<pre><code>class Cal:
+    # pi is a class variable
+    pi = 3.142
+
+    def __init__(self, radius):
+        # self.radius is an instance variable
+        self.radius = radius
+
+    def area(self):
+        return self.pi * (self.radius ** 2)
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise - Classes" duration="0">
+        <h3>Create a NAVKontor class</h3>
+<p>The class should have</p>
+<ul>
+<li>a constructor that takes the arguments <code>name: str</code> and <code>num_employees: int</code></li>
+<li>a method <code>get_in_line(user:str)</code> that takes a user name and adds them to the line ( you have to build the internal datastucture to handle this)</li>
+<li>a method <code>get_line()</code> which returns a tuple with the users in the line.</li>
+<li><strong>str</strong> and <em>repl</em> to reflect the class</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="File IO" duration="0">
         
 
       </google-codelab-step>
     
       <google-codelab-step label="A Python Project" duration="0">
+        
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Testing Python Code" duration="0">
         
 
       </google-codelab-step>

@@ -77,6 +77,9 @@ Duration: 1:00
 ## Python a overview
 Duration: 2:00
 
+
+
+
 Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer,” code is also represented by objects.)
 
  - Python is strongly typed and dynamically typed.
@@ -99,6 +102,64 @@ Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but
 ### Python 2 end of life is january 1 2020.
 
 ![Python 2 to Python 3](resources/2_to_3.jpeg)
+
+
+## Python Objects and Types
+
+In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.
+
+If you can, you should always use Python´s built-in types
+
+| Object Type     | Example  |
+| ------------- |:-------------:|
+| Numbers     | 12 , 343.34 , Decimal() |
+| Strings    | "sauna", 'python' | 
+| Lists| [1, "two, [ 4, 5] ]| 
+| Dictonaries | {"breakfast": "eggs", "number": 1, "nested": {1: "element"}} | 
+| Tuples | (1, "bacon", 13.2)) | 
+| Sets | set(aaaa) # {"a"}| 
+| Booleans| True, False | 
+| NoneType | None | 
+
+
+## Python and Dynamic Typing
+
+In Python you do not declare variables with type
+
+Java
+
+```java
+
+int myInt = 5;
+
+```
+
+Python
+
+```python
+
+my_int  = 5
+
+```
+
+In Python, types are determined automatically at runtime, not in respone to declarations in your code.
+#### This means this is possible in Python
+
+```python
+
+my_var = 1
+
+my_var += 1 # 2
+
+my_var = "hello"
+
+my_var += " friend" # hello friend"
+
+```
+
+Under the hood Python uses types, but these types live in the objects you create. Not in the references to them.
+
+
 
 
 ## Getting Started
@@ -197,9 +258,9 @@ unlimited precision signed integer
 
 my_int = 1
 
-my_new_int = int(22.22)
+my_new_int = int(22.22) # 22
 
-from_str_int = int("456")
+from_str_int = int("456") # 456
 
 ```
 
@@ -663,6 +724,49 @@ print(my_list) # [1, 2, 3, 4, 'Mhhh this might cause some confusion for people u
 
 ```
 
+## Tuples
+Duration: 2:00
+
+Tuples work like lists, except that elements in tuples cannot change place. Tupels are immutable. After a tuple has been created, the length of the tuple cannot change.
+
+##### A Tuple is a ordered collection of arbitrary Python objects
+
+#### Example
+
+```python
+
+# create tuple
+my_tuple = (1, 2, 3, 4)
+
+
+#access contents
+element = my_tuple[1]
+
+
+```
+
+
+#### In Action
+
+```python
+
+
+new_tuple = (1, 2) + (3 ,4) # (1 , 2, 3 , 4)
+
+trippeled_tuple = (1, 2) * 3 # (1, 2, 1, 2, 1, 2)
+
+```
+
+
+To create a tuple with only one element, leave a trailing ,
+
+```python
+
+only_int = (1) # 1
+
+tuple_with_int = (1,) # (1, )
+
+```
 
 ## Dictonaries
 Duration: 10:00
@@ -876,12 +980,70 @@ Functions that does not return explicitly returns None
 
 ### Using Functions
 
+
+Normal argument passing
 ```python
+
 
 my_funny_joke = "boogers"
 funny_print(my_funny_joke)
 
 ```
+
+Passing as keyword argument
+```python
+
+my_funny_joke = "boogers"
+funny_print(text=my_funny_joke) # more readable perhaps
+
+```
+
+## Python Default Arguments
+Duration: 5:00
+
+Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.
+
+
+#### Template
+```python
+
+def function_name(param=default):
+    ...
+
+```
+
+#### Example
+
+```python
+
+def decode_str(encoding="utf-8"):
+    ...
+
+```
+
+
+```python
+
+# Define function
+def say_meow(times=1):
+    """ Function that prints 'Meow!' """
+
+    for _ in range(times):
+        print("Meow!")
+
+
+# Use function
+
+say_meow() # Meow!
+
+say_meow(2) # Meow! Meow!
+
+
+```
+
+
+#### NB: Do not use mutable variables as default values
+
 
 ## Exercise - Functions
 Duration: 5:00
@@ -1008,38 +1170,187 @@ Note that Python only passes by object reference to functions and methods
 
 
 
-## Default Arguments
-Duration: 5:00
-
-Python functions can be defined with default arguments. That is arguments that are optional and will default to a specified value if the argument is not added by the caller of the function.
-
-
-#### Template
-```python
-
-def function_name(param=default):
-    ...
-
-```
-
-#### Example
-
-```python
-
-def decode_str(encoding="utf-8"):
-    ...
-
-```
 
 ## Exceptions
 
 
 ## Iterables
 
-## Classes
+## Python Classes
+
+In Python as we have seen it is not necessary to create classes to structure our code. Create classes to hold our code and data will in many cases be regarded as bad practice by seasoned pythonistas. Python is a flexible language. It is up to the writer to decide what level of structure and abstraction the code needs. 
+
+The convention is to use CammelCase for Python class names.
+
+#### Template
+
+```python 
+
+class ClassName:
+    pass
 
 
-## File io
+```
+
+
+In Python the constructor is handled by the language. Python instead exposes the  __int__() method. For all practical purposes the __init__() method can be thought of like a contructor.
+
+```python
+
+
+class ClassName:
+
+    def __init__(arg1, arg2):
+        pass
+
+
+```
+
+## Magic Methods
+
+Python’s classes are famous for their magic methods, commonly called dunder (double underscore) methods. These are much like the Special Attributes discussed in the Modularity part of the course.
+
+they are named in the same way:
+
+```python
+
+__methodname__
+
+```
+
+Most used of them is the ``__init__``` method, used for class instansiation. They're special methods that you can define to add "magic" to your classes. 
+
+### Here are some commonly used magic methods
+
+
+#### __str___
+Defines behavior for when str() is called on an instance of your class.
+
+```python
+
+__str__(self)
+
+```
+
+
+##### Example
+
+```python
+class PrintableClass:
+
+     def __init(self, name: str):
+        self.name = name
+    
+
+    def __str__(self):
+        return f"PrintableClass(name={self.name})"
+
+```
+
+
+##### __repr__
+Defines behavior for when repr() is called on an instance of your class. The major difference between str() and repr() is intended audience. repr() is intended to produce output that is mostly machine-readable (in many cases, it could be valid Python code even), whereas str() is intended to be human-readable.
+```python
+
+__repr__(self)
+
+```
+
+
+##### __len__
+Returns the length of the container. Part of the protocol for both immutable and mutable containers.
+```python
+
+__len__(self)
+
+```
+
+
+##### Example
+
+```python
+
+class SchoolBus:
+
+    def __init__(self, *students):
+        self._students = list(students)
+
+    
+    def __len__(self):
+        return len(self._students)
+
+
+
+school_bus = SchoolBus("Carl", "Victoria", "Mike")
+
+print(len(school_bus)) # 3
+
+```
+
+
+##### Read more about Python magic methods here
+[link](https://rszalski.github.io/magicmethods/)
+
+
+
+## Extra About Python Classes
+
+
+#### NOTE:
+ - Python does not have a keyword for interfaces
+ - Python does have multiple inheritance
+
+The most common use of multiple inheritance in Python is "Mixin" classes. Classes that provide extra functionality through inheritance. Example: LoggingMixin, AuthenticationMixin.
+
+```python
+
+class MyFunClass(CoolMixin, EvenCoolerMixin):
+    pass
+
+ ```
+
+
+
+## Instance & Class variables
+Most beginners and even some advanced Python programmers do not understand the distinction between instance and class variables. Their lack of understanding forces them to use these different types of variables incorrectly. Let’s understand them.
+
+The basic difference is:
+
+ - Instance variables are for data which is unique to every object
+ - Class variables are for data shared between different instances of a class
+
+
+```python
+
+class Cal:
+    # pi is a class variable
+    pi = 3.142
+
+    def __init__(self, radius):
+        # self.radius is an instance variable
+        self.radius = radius
+
+    def area(self):
+        return self.pi * (self.radius ** 2)
+```
+
+## Exercise - Classes
+
+#### Create a NAVKontor class
+The class should have
+
+ - a constructor that takes the arguments ```name: str``` and ```num_employees: int```
+ - a method ```get_in_line(user:str)``` that takes a user name and adds them to the line ( you have to build the internal datastucture to handle this)
+ - a method ```get_line()``` which returns a tuple with the users in the line.
+ - __str__ and ___repl___ to reflect the class
+
+
+
+
+## File IO
 
 
 ## A Python Project
+
+
+## Testing Python Code
