@@ -124,7 +124,9 @@ If you can, you should always use Python´s built-in types
 
 ## Python and Dynamic Typing
 
-In Python you do not declare variables with type
+ - Python uses dynamic typing. Meaning we do not specify types in advance.
+ - Python uses strong typing. Python does not try to coerce types to match
+
 
 Java
 
@@ -142,7 +144,7 @@ my_int  = 5
 
 ```
 
-In Python, types are determined automatically at runtime, not in respone to declarations in your code.
+In Python, types are determined automatically at runtime, not in respone to declarations in code.
 #### This means this is possible in Python
 
 ```python
@@ -1148,30 +1150,70 @@ Duration: 1:00
 ## Objects
 Duration: 10:00
 
+#### Garbage Collector
 
-Python does not really have the samme variables as other languages like C++ or Java. All variables are named references to objects.
+Python is garbage collected. When every reference to a object goes out of scope the object gets garbage collected.
+
+
+##### Variables and References
+Python does not really have the samme variables as other languages like C++ or Java. In Python all variables are named references to objects.
+
+ - Assignment attches a name to an object
+ - Assigning from one reference to another puts two name tags on the same object.
+
+#### Example
 
 ```python
 a = 5
 
 b = 3
 
-id(a) # returns the indentity(hash) of the object
+id(a) # returns the indentity of the object
 id(b) 
 
 a is b # False
 
 a = b
 
-a is b # True
+a is b # True, a now points to the same int object as b
 ```
 
-Note that Python only passes by object reference to functions and methods
+ - The ```is``` operator determines equality of identity
+ - Use ```==``` to test for equivalence
+
+#### Example
+
+```python
+b = [2,3]
+
+a = b # a now points to the same list object as b
+
+a is b # True, a and b points to the same object
+
+a == b # True, a and b point to the same object and that object is of course equivalent with itself
+
+a = [2,3] # assign a to a new list object containing the same values as b
+
+a is b # False, a and b points to different list objects
+
+a == b # True, a and b's list objects are equivalent
+
+
+```
+
+### Note that Python only passes by object reference to functions and methods.
+
 
 
 
 
 ## Exceptions
+
+#### Key Concepts
+
+- Raise and exception to interrupt program flow
+
+
 
 
 ## Iterables
