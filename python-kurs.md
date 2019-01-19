@@ -1161,6 +1161,8 @@ Python does not really have the samme variables as other languages like C++ or J
  - Assignment attches a name to an object
  - Assigning from one reference to another puts two name tags on the same object.
 
+![Python referencing](resources/python_ref.png)
+
 #### Example
 
 ```python
@@ -1236,12 +1238,12 @@ except ExceptionType:
 
 ## Exceptions because of programmer errors
 
-##### IndentationError
-The indentation of your code does not conform to Python standards
+ - IndentationError
+    The indentation of your code does not conform to Python standards
 
-##### SyntaxError
+- SyntaxError
 
-##### NameError
+- NameError
 
 
 
@@ -1308,6 +1310,70 @@ Python is a dynamically typed language, embrace that!
 
 ## Iterables
 
+In Python any object can be iterate over as long as it implements the ```__iter__``` magic method.
+
+```python
+
+class SchoolBus:
+
+    def __init__(self, *students):
+        self._students = list(students)
+    
+    def __iter__(self):
+        return iter(self._students)
+
+# Create Schoolbus with two students
+sb = SchoolBus("Mike", "Fred")
+
+# loop over the SchoolBus object 
+for student in sb:
+    print(student) # Mike Fred
+
+```
+
+
+## Comprehensions
+
+Comprehensions is a method of defining container data-structures, like lists, dicts and sets in a declarative manner.
+
+
+### Types of Comprehensions
+
+- list comprehensions
+- set comprehensions
+- dictionary comprehensions
+
+### Pros
+ - Comprehensions are widely used in the Python community. 
+ 
+ - Readable
+
+ - Faster
+
+ - Expressive
+
+
+## List Comprehensions
+### Template
+
+```python
+
+[expr(item) for intem in iterable]
+
+```
+
+
+### Example
+
+```python
+
+words = " Hello I am learning a new Python concept".split() # ["Hello", "I", "am", "learning", "a", "new", "Python", "concept"]
+
+word_length = [len(word) for word in words] # [5, 1, 2, 8, 1, 3, 6, 7]
+
+```
+
+
 ## Python Classes
 
 In Python as we have seen it is not necessary to create classes to structure our code. Create classes to hold our code and data will in many cases be regarded as bad practice by seasoned pythonistas. Python is a flexible language. It is up to the writer to decide what level of structure and abstraction the code needs. 
@@ -1340,7 +1406,7 @@ class ClassName:
 
 ## Magic Methods
 
-Python’s classes are famous for their magic methods, commonly called dunder (double underscore) methods. These are much like the Special Attributes discussed in the Modularity part of the course.
+Python’s classes are famous for their magic methods , commonly called dunder (double underscore) methods. 
 
 they are named in the same way:
 
@@ -1355,7 +1421,7 @@ Most used of them is the ``__init__``` method, used for class instansiation. The
 ### Here are some commonly used magic methods
 
 
-#### __str___
+### str
 Defines behavior for when str() is called on an instance of your class.
 
 ```python
@@ -1380,7 +1446,7 @@ class PrintableClass:
 ```
 
 
-##### __repr__
+### repr
 Defines behavior for when repr() is called on an instance of your class. The major difference between str() and repr() is intended audience. repr() is intended to produce output that is mostly machine-readable (in many cases, it could be valid Python code even), whereas str() is intended to be human-readable.
 ```python
 
@@ -1389,7 +1455,7 @@ __repr__(self)
 ```
 
 
-##### __len__
+### len
 Returns the length of the container. Part of the protocol for both immutable and mutable containers.
 ```python
 
@@ -1486,3 +1552,26 @@ The class should have
 
 
 ## Testing Python Code
+    Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
+
+    the unittest module. Contorary to it's name can be used for:
+
+    - unit tests
+    - integration tests
+    - acceptance tests
+
+
+#### Concepts
+
+- TestCase
+    groups togheter related tests functions. The basic unit of thest organization in unittest
+
+- Fixtures
+    code that runs before and/or after each test function. Sets up and tears down the testing environment.
+
+- Assertions
+  specific tests for condition and behaviors
+
+
+
+## 
