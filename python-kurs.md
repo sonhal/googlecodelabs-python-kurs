@@ -1209,9 +1209,99 @@ a == b # True, a and b's list objects are equivalent
 
 ## Exceptions
 
-#### Key Concepts
+#### Repetition
 
 - Raise and exception to interrupt program flow
+
+- Handle an exception to resuime control
+
+- Unhandled exceptions will terminate the program
+
+- Exceptions objects contain information about the exceptional event
+
+
+Python and Java exceptions are similar.
+
+
+#### Template
+```python
+
+try:
+    # code that might throw an exception
+except ExceptionType:
+    # handle exception
+
+```
+
+
+## Exceptions because of programmer errors
+
+##### IndentationError
+The indentation of your code does not conform to Python standards
+
+##### SyntaxError
+
+##### NameError
+
+
+
+You can get a reference to the Exception object by assignmet in the except clause.
+
+
+```python
+try:
+    # code that might throw exceptions
+except ValueError as err:
+    print(err)
+
+
+```
+
+
+If we want we can log the error and re-raise the error.
+
+```python
+
+try:
+    # code that might throw exceptions
+except TypeError as err:
+    print(f"TypeError: {err}")
+    raise # raise the TypeError again
+
+```
+
+
+We can ensure that a code block always is run after an exception with ```finally```
+
+
+```python
+
+try:
+    # code that might throw exceptions
+except Exception as err:
+    pass
+finally:
+    print("I will always be ran!")
+
+```
+
+## Python and TypeErrors
+
+In Python we commonly do not try to protect against TypeErrors.
+
+#### Example of type checking
+```python
+
+def convert_to_int(var):
+    if not isinstance(var, str):
+        raise TypeError("var argument must be a string")
+    return int(var)
+
+```
+This is regarded as bad Python code.
+
+
+Python is a dynamically typed language, embrace that!
 
 
 
