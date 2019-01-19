@@ -116,8 +116,8 @@ If you can, you should always use Python´s built-in types
 | Strings    | "sauna", 'python' | 
 | Lists| [1, "two, [ 4, 5] ]| 
 | Dictonaries | {"breakfast": "eggs", "number": 1, "nested": {1: "element"}} | 
-| Tuples | (1, "bacon", 13.2)) | 
-| Sets | set(aaaa) # {"a"}| 
+| Tuples | (1, "bacon", 13.2, ["data", 1]) | 
+| Sets | set("aaaa") -> {"a"}| 
 | Booleans| True, False | 
 | NoneType | None | 
 
@@ -185,6 +185,8 @@ Mac/Linux: Ctrl + D
 
 The Python Standard Library is large. Python follows a philosophy of; "Batteries included". Python is ready to go out of the box with modules to do a vast array of tasks.
 
+#### Importing Modules Template
+
 ```python
 
 import module_name
@@ -197,7 +199,7 @@ from module_name import function_name as alias
 
 ```
 
-Example with the math module
+#### Example with the math module
 
 ```python
 
@@ -212,7 +214,7 @@ result = factorial(2)
 
 
 
-#### The free function help() will provide description of provided module
+#### The built-in function help() will provide description of provided module
 ```python
 
 help(module_name)
@@ -235,7 +237,7 @@ input() # The function then reads a line from input, converts it to a string
 
 print() # Prints to stdout
 
-bool() # returns True or False
+bool() # returns the True or False 
 
 help() # Invoke the built-in help system. (This function is intended for interactive use(REPL).)
 
@@ -1155,7 +1157,7 @@ Duration: 10:00
 Python is garbage collected. When every reference to a object goes out of scope the object gets garbage collected.
 
 
-##### Variables and References
+#### Variables and References
 Python does not really have the samme variables as other languages like C++ or Java. In Python all variables are named references to objects.
 
  - Assignment attches a name to an object
@@ -1203,7 +1205,7 @@ a == b # True, a and b's list objects are equivalent
 
 ```
 
-### Note that Python only passes by object reference to functions and methods.
+#### Note that Python only passes by object reference to functions and methods.
 
 
 
@@ -1540,7 +1542,7 @@ The class should have
  - a constructor that takes the arguments ```name: str``` and ```num_employees: int```
  - a method ```get_in_line(user:str)``` that takes a user name and adds them to the line ( you have to build the internal datastucture to handle this)
  - a method ```get_line()``` which returns a tuple with the users in the line.
- - __str__ and ___repl___ to reflect the class
+ - __str__ and __repl__ to reflect the class
 
 
 
