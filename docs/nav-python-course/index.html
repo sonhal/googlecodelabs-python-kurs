@@ -82,6 +82,14 @@ python3 --version
 
       </google-codelab-step>
     
+      <google-codelab-step label="Development Tools" duration="0">
+        <p>Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use porpouse built tools for Python development.</p>
+<h3>Pycharm</h3>
+<p>Maybe the best Python IDE today <a href="https://www.jetbrains.com/pycharm/" target="_blank">link</a></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Python a overview" duration="2">
         <p>Objects are Python&#39;s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann&#39;s model of a &#34;stored program computer,&#34; code is also represented by objects.)</p>
 <ul>
@@ -1173,38 +1181,177 @@ print(len(school_bus)) # 3
 
       </google-codelab-step>
     
-      <google-codelab-step label="File IO" duration="0">
-        
+      <google-codelab-step label="Files and Resources" duration="0">
+        <p>Python comes with a built-in open function.</p>
+<pre><code>open()
+</code></pre>
+<p>It takes the following arguments:</p>
+<ul>
+<li>file: path to the file (required)</li>
+<li>mode: read/write/append, binary/text</li>
+<li>encoding: text encoding</li>
+</ul>
+<p>Python handles opened files in two modes:</p>
+<ul>
+<li>Binary: Raw data</li>
+<li>Text: strings of str type</li>
+</ul>
+<p>In the case you do not specify an encoding, Python will choose a default based on the contents of:</p>
+<pre><code>import sys
+sys.getdefaultencoding()
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Writing to File" duration="0">
+        <p>| Character     | Meaning     |<br>| ————- |:————-:|<br>| ‘r&#39;           | open for reading (default) |<br>| ‘w&#39;           | open for writing, truncating the file first |<br>| ‘x&#39;           | open for exclusive creation, failing if the file already exists |<br>| ‘a&#39;           | open for writing, appending to the end of the file if it exists |<br>| ‘b&#39;           | binary mode |<br>| &#39;t&#39;           | text mode (default) |<br>| ‘+&#39;           | open a disk file for updating (reading and writing) |<br>| ‘U&#39;           | <a href="https://docs.python.org/3/glossary.html#term-universal-newlines" target="_blank">universal newlines</a> mode (deprecated) |</p>
+<p>The default mode is ‘r&#39; (open for reading text, synonym of ‘rt&#39;).</p>
+<h3>Writting single lines</h3>
+<pre><code>f = open(&#34;cool_text&#34;, mode=&#34;wt&#34;, encoding=&#34;utf-8&#34;)
+
+f.write(&#34;Python courses are the best!\n&#34;)
+f.write(&#34;It is so much fun!&#34;)
+
+f.close()
+
+
+</code></pre>
+<h3>Writting multiple lines</h3>
+<pre><code>f = open(&#34;cool_text&#34;, mode=&#34;wt&#34;, encoding=&#34;utf-8&#34;)
+
+f.writelines([&#34;Python courses are the best!\n&#34;, 
+              &#34;It is so much fun!&#34;])
+
+f.close()
+
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reading from File" duration="0">
+        <h2>Basic read</h2>
+<pre><code>of = open(&#34;cool_text&#34;, mode=&#34;rt&#34;, encoding=&#34;utf-8&#34;)
+cool_string = of.read()
+
+print(cool_string) # &#34;Python courses are the best!\nIt is so much fun!&#34;
+
+</code></pre>
+<h2>Read a line</h2>
+<pre><code>of = open(&#34;cool_text&#34;, mode=&#34;rt&#34;, encoding=&#34;utf-8&#34;)
+cool_string = of.readline()
+of.close()
+
+print(cool_string) # &#34;Python courses are the best!\n&#34; 
+
+</code></pre>
+<h2>Read lines</h2>
+<pre><code>of = open(&#34;cool_text&#34;, mode=&#34;rt&#34;, encoding=&#34;utf-8&#34;)
+cool_strings = of.readlines()
+of.close()
+
+print(cool_strings) # [&#34;Python courses are the best!\n&#34;], [&#34;It is so much fun!&#34;] 
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Files as Iterators" duration="0">
+        <p>File objects implement the iterator protocol <code>__iter__</code></p>
+<p>We can iterate over a file object like so:</p>
+<pre><code>def file_printer(filename):
+    f = open(filename, mode=&#34;rt&#34;, encoding=&#34;utf-8&#34;)
+    for line in f:
+        print(line)
+    f.close()
+
+
+</code></pre>
+
 
       </google-codelab-step>
     
       <google-codelab-step label="A Python Project" duration="0">
-        
+        <p>Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project&#39;s architecture.</p>
+<h2>Template Python Project</h2>
+<pre><code>README.rst
+LICENSE
+setup.py
+requirements.txt
+sample/__init__.py
+sample/core.py
+sample/helpers.py
+docs/index.md
+tests/test_basic.py
+tests/test_advanced.py
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Testing Python Code" duration="0">
-        <p>Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.</p>
-<p>the unittest module. Contorary to it&#39;s name can be used for:</p>
-<ul>
-<li>unit tests</li>
-<li>integration tests</li>
-<li>acceptance tests</li>
-</ul>
-<h3>Concepts</h3>
-<ul>
-<li>TestCase<br>groups togheter related tests functions. The basic unit of thest organization in unittest</li>
-<li>Fixtures<br>code that runs before and/or after each test function. Sets up and tears down the testing environment.</li>
-<li>Assertions<br>specific tests for condition and behaviors</li>
-</ul>
+</code></pre>
+<h3>Project Module</h3>
+<p>Replace <code>sample</code> with the name of the project. The <code>sample/</code> directory is the location of the python code for the project</p>
+<p>#### Licence</p>
+<pre><code> This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
+
+#### Setup.py
+ - Location: ./setup.py 
+ - Purpose:  Package and distribution management.
+If the project is meant to be used as a package you should provide a setup.py file that will handle installation of your package.
+
+More about setup.py here [link](https://packaging.python.org/tutorials/packaging-projects/)
 
 
-      </google-codelab-step>
-    
-      <google-codelab-step label="Unittest" duration="0">
-        <h3>Example</h3>
-<p>Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.</p>
-<pre><code>def get_even_indexed(iterable):
+#### Requirements File
+ - Location: ./requirements.txt 
+ - Purpose:  Development dependencies.
+A Pip requirements file should be placed at the root of the repository. It should specify the dependencies required to contribute to the project: testing, building, and generating documentation.
+
+If your project has no development dependencies, or you prefer development environment setup via setup.py, this file may be unnecessary.
+
+#### Documentation
+ - Location: ./docs/ 
+ - Purpose:  Package reference documentation.
+
+#### Test Suite
+ - Location: ./test_sample.py or ./tests 
+ - Purpose:  Package integration and unit tests.
+Starting out, a small test suite will often exist in a single file:
+
+./test_sample.py
+
+
+## Testing Python Code
+Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
+
+the unittest module. Contorary to it&#39;s name can be used for:
+
+- unit tests
+- integration tests
+- acceptance tests
+
+
+#### Concepts
+
+- TestCase
+    groups togheter related tests functions. The basic unit of thest organization in unittest
+
+- Fixtures
+    code that runs before and/or after each test function. Sets up and tears down the testing environment.
+
+- Assertions
+  specific tests for condition and behaviors
+
+
+
+## Unittest
+
+####Example
+Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.
+
+```python
+
+def get_even_indexed(iterable):
     return iterable[::2] 
 
 

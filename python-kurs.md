@@ -74,10 +74,16 @@ Duration: 1:00
 
 
 
+## Development Tools
+
+Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use porpouse built tools for Python development.
+
+#### Pycharm
+Maybe the best Python IDE today [link](https://www.jetbrains.com/pycharm/)
+
+
 ## Python a overview
 Duration: 2:00
-
-
 
 
 Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer,” code is also represented by objects.)
@@ -1547,10 +1553,178 @@ The class should have
 
 
 
-## File IO
+## Files and Resources
 
+Python comes with a built-in open function.
+
+```python
+open()
+```
+
+It takes the following arguments:
+
+ - file: path to the file (required)
+ - mode: read/write/append, binary/text
+ - encoding: text encoding
+
+
+ Python handles opened files in two modes:
+  - Binary: Raw data
+  - Text: strings of str type
+
+In the case you do not specify an encoding, Python will choose a default based on the contents of:
+
+```python
+import sys
+sys.getdefaultencoding()
+```
+
+## Writing to File
+
+| Character     | Meaning     | 
+| ------------- |:-------------:| 
+| 'r'           | open for reading (default) | 
+| 'w'           | open for writing, truncating the file first | 
+| 'x'           | open for exclusive creation, failing if the file already exists |
+| 'a'           | open for writing, appending to the end of the file if it exists |
+| 'b'           | binary mode |
+| 't'           | text mode (default) |
+| '+'           | open a disk file for updating (reading and writing) |
+| 'U'           | [universal newlines](https://docs.python.org/3/glossary.html#term-universal-newlines) mode (deprecated) |
+
+The default mode is 'r' (open for reading text, synonym of 'rt').
+
+
+#### Writting single lines
+```python
+
+f = open("cool_text", mode="wt", encoding="utf-8")
+
+f.write("Python courses are the best!\n")
+f.write("It is so much fun!")
+
+f.close()
+
+
+```
+
+#### Writting multiple lines
+
+```python
+
+f = open("cool_text", mode="wt", encoding="utf-8")
+
+f.writelines(["Python courses are the best!\n", 
+              "It is so much fun!"])
+
+f.close()
+
+
+```
+
+
+
+
+## Reading from File
+
+### Basic read
+```python
+of = open("cool_text", mode="rt", encoding="utf-8")
+cool_string = of.read()
+
+print(cool_string) # "Python courses are the best!\nIt is so much fun!"
+
+```
+
+### Read a line
+```python
+of = open("cool_text", mode="rt", encoding="utf-8")
+cool_string = of.readline()
+of.close()
+
+print(cool_string) # "Python courses are the best!\n" 
+
+```
+
+
+### Read lines
+```python
+of = open("cool_text", mode="rt", encoding="utf-8")
+cool_strings = of.readlines()
+of.close()
+
+print(cool_strings) # ["Python courses are the best!\n"], ["It is so much fun!"] 
+
+```
+
+## Files as Iterators
+
+File objects implement the iterator protocol ```__iter__```
+
+We can iterate over a file object like so:
+
+```python
+
+def file_printer(filename):
+    f = open(filename, mode="rt", encoding="utf-8")
+    for line in f:
+        print(line)
+    f.close()
+
+
+```
 
 ## A Python Project
+
+Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project's architecture.
+
+### Template Python Project
+
+```
+README.rst
+LICENSE
+setup.py
+requirements.txt
+sample/__init__.py
+sample/core.py
+sample/helpers.py
+docs/index.md
+tests/test_basic.py
+tests/test_advanced.py
+
+```
+#### Project Module
+ Replace ```sample``` with the name of the project. The ```sample/``` directory is the location of the python code for the project
+
+ #### Licence
+ ```LICENCE``` file.
+ This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
+
+#### Setup.py
+ - Location: ./setup.py 
+ - Purpose:  Package and distribution management.
+If the project is meant to be used as a package you should provide a setup.py file that will handle installation of your package.
+
+More about setup.py here [link](https://packaging.python.org/tutorials/packaging-projects/)
+
+
+#### Requirements File
+ - Location: ./requirements.txt 
+ - Purpose:  Development dependencies.
+A Pip requirements file should be placed at the root of the repository. It should specify the dependencies required to contribute to the project: testing, building, and generating documentation.
+
+If your project has no development dependencies, or you prefer development environment setup via setup.py, this file may be unnecessary.
+
+#### Documentation
+ - Location: ./docs/ 
+ - Purpose:  Package reference documentation.
+
+#### Test Suite
+ - Location: ./test_sample.py or ./tests 
+ - Purpose:  Package integration and unit tests.
+Starting out, a small test suite will often exist in a single file:
+
+./test_sample.py
 
 
 ## Testing Python Code
