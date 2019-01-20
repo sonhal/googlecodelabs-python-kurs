@@ -1075,6 +1075,23 @@ word_length = [len(word) for word in words] # [5, 1, 2, 8, 1, 3, 6, 7]
 
       </google-codelab-step>
     
+      <google-codelab-step label="Dictionary Comprehensions" duration="0">
+        <h3>Template</h3>
+<p>We have to call .items() since iteration directly on a dict object only yields the keys.</p>
+<pre><code>dict_variable = {key:value for (key,value) in dictonary.items()}
+
+</code></pre>
+<h3>Example</h3>
+<p>Lets reverse the switch key and value with a comprehension</p>
+<pre><code>name_and_age = {&#34;Mike&#34;: 20, &#34;Monica&#34;: 30, &#34;Lars&#34;: 43}
+
+age_and_name = {value:key for (key, value) in name_and_age.items()}
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Python Classes" duration="0">
         <p>In Python as we have seen it is not necessary to create classes to structure our code. Create classes to hold our code and data will in many cases be regarded as bad practice by seasoned pythonistas. Python is a flexible language. It is up to the writer to decide what level of structure and abstraction the code needs.</p>
 <p>The convention is to use CammelCase for Python class names.</p>
@@ -1341,8 +1358,8 @@ tests/test_advanced.py
 
 </code></pre>
 <h3>Project Module</h3>
-<p>Replace <code>sample</code> with the name of the project. The <code>sample/</code> directory is the location of the python code for the project</p>
-<p>#### Licence</p>
+<p>Replace <code>sample</code> with the name of the project. The <code>sample/</code> directory is the location of the python code for the project.</p>
+<h3>Licence</h3>
 <pre><code> This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
 
 #### Setup.py
@@ -1479,9 +1496,13 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
       </google-codelab-step>
     
       <google-codelab-step label="A Python Project" duration="0">
-        <p>To exercice our new Python skills I will leave you with a small challenge!</p>
+        <p>To exercise our new Python skills I will leave you with a small challenge!</p>
 <h2>Python Webscraper</h2>
-<p>[TODO Python webscraper intro]</p>
+<p>Create a small Python program that can be called from the commandline. The program should take a url from the user as the argument to the program.</p>
+<h3>Example</h3>
+<p><code>python3 -m webscraper https://google.com</code></p>
+<p>The program should print to the terminal the following information</p>
+<p>[TODO]</p>
 
 
       </google-codelab-step>
