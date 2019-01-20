@@ -1497,8 +1497,8 @@ print(len(school_bus)) # 3
 
 
 #### NOTE:
- - Python does not have a keyword for interfaces
- - Python does have multiple inheritance
+ - Python <b>does not</b> have a keyword for interfaces
+ - Python <b>does</b> have multiple inheritance
 
 The most common use of multiple inheritance in Python is "Mixin" classes. Classes that provide extra functionality through inheritance. Example: LoggingMixin, AuthenticationMixin.
 
@@ -1554,13 +1554,13 @@ The class should have
 
 
 ## Testing Python Code
-    Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
+Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
 
-    the unittest module. Contorary to it's name can be used for:
+the unittest module. Contorary to it's name can be used for:
 
-    - unit tests
-    - integration tests
-    - acceptance tests
+- unit tests
+- integration tests
+- acceptance tests
 
 
 #### Concepts
@@ -1576,4 +1576,113 @@ The class should have
 
 
 
-## 
+## Unittest
+
+####Example
+Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.
+
+```python
+
+def get_even_indexed(iterable):
+    return iterable[::2] 
+
+
+```
+
+
+We can then write a unittest for the function in this manner:
+
+
+```python
+import unittest
+
+
+class GetEvenIndexedElementsTest(unittest.TestCase):
+
+    def setUp(self):
+        """ Fixture for setting up variables for the tests to use"""
+        self.normal_iterable = (0, 1, 2, 3, 4, 5, 6)
+
+    def test_function_runs(self):
+        """Basic test to see that the function runs"""
+        get_even_indexed(self.normal_iterable)
+
+    def test_function_return_count(self):
+        """ Check that the result count is correct"""
+        result = get_even_indexed(self.normal_iterable)
+        self.assertEqual(len(result), 4)
+
+
+```
+
+
+
+## Python Virtual Environments
+
+#### Problem
+Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library.
+
+This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.
+
+#### Solution
+
+The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages.
+
+Different applications can then use different virtual environments. To resolve the earlier example of conflicting requirements, application A can have its own virtual environment with version 1.0 installed while application B has another virtual environment with version 2.0. If application B requires a library be upgraded to version 3.0, this will not affect application A’s environment.
+
+
+## Creating Virtual Environments
+
+The module used to create and manage virtual environments is called ```venv```
+
+From the commandline
+
+```bash
+python3 -m venv env_name
+```
+
+This will create the ```env_name```directory if it doesn’t exist, and also create directories inside it containing a copy of the Python interpreter, the standard library, and various supporting files.
+
+
+On Windows, run:
+```bash
+env_name\Scripts\activate.bat
+```
+
+On Unix or MacOS, run:
+```bash
+source env_name/bin/activate
+```
+
+
+To deactive
+```bash
+deactivate
+```
+
+## Pip
+
+You can install, upgrade, and remove packages using a program called ```pip```. By default pip will install packages from the Python Package Index, (https://pypi.org)[https://pypi.org]
+
+
+### Managing Packages with pip
+
+pip has a number of subcommands: “search”, “install”, “uninstall”, “freeze”, etc. See [Installing Python Modules](https://docs.python.org/3/installing/index.html#installing-index)
+
+
+
+#### Installing Packages
+
+command template
+```bash
+pip install package_name
+```
+
+You can specify package version directly in the commandline
+
+command example
+```bash
+pip install requests==2.6.0
+```
+
+## Requirements.txt

@@ -121,10 +121,10 @@ python3 --version
 </td><td colspan="1" rowspan="1"><p>{&#34;breakfast&#34;: &#34;eggs&#34;, &#34;number&#34;: 1, &#34;nested&#34;: {1: &#34;element&#34;}}</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>Tuples</p>
-</td><td colspan="1" rowspan="1"><p>(1, &#34;bacon&#34;, 13.2))</p>
+</td><td colspan="1" rowspan="1"><p>(1, &#34;bacon&#34;, 13.2, [&#34;data&#34;, 1])</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>Sets</p>
-</td><td colspan="1" rowspan="1"><p>set(aaaa) # {&#34;a&#34;}</p>
+</td><td colspan="1" rowspan="1"><p>set(&#34;aaaa&#34;) -&gt; {&#34;a&#34;}</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>Booleans</p>
 </td><td colspan="1" rowspan="1"><p>True, False</p>
@@ -177,6 +177,7 @@ my_var += &#34; friend&#34; # hello friend&#34;
 <p>Windows: Ctrl + Z + Enter<br>Mac/Linux: Ctrl + D</p>
 <h2>Python Standard Library</h2>
 <p>The Python Standard Library is large. Python follows a philosophy of; &#34;Batteries included&#34;. Python is ready to go out of the box with modules to do a vast array of tasks.</p>
+<h3>Importing Modules Template</h3>
 <pre><code>import module_name
 
 from module_name import function_name
@@ -186,7 +187,7 @@ import module_name as alias
 from module_name import function_name as alias
 
 </code></pre>
-<p>Example with the math module</p>
+<h3>Example with the math module</h3>
 <pre><code>import math # import only the module
 
 result = math.factorial(2)
@@ -195,7 +196,7 @@ from math import factorial # import the factorial function from the math module
 result = factorial(2)
 
 </code></pre>
-<h3>The free function help() will provide description of provided module</h3>
+<h3>The built-in function help() will provide description of provided module</h3>
 <pre><code>help(module_name)
 
 </code></pre>
@@ -212,7 +213,7 @@ input() # The function then reads a line from input, converts it to a string
 
 print() # Prints to stdout
 
-bool() # returns True or False
+bool() # returns the True or False 
 
 help() # Invoke the built-in help system. (This function is intended for interactive use(REPL).)
 
@@ -871,7 +872,7 @@ def read_from_url(url: str) -&gt; Sequence:
       <google-codelab-step label="Objects" duration="10">
         <h3>Garbage Collector</h3>
 <p>Python is garbage collected. When every reference to a object goes out of scope the object gets garbage collected.</p>
-<h4>Variables and References</h4>
+<h3>Variables and References</h3>
 <p>Python does not really have the samme variables as other languages like C++ or Java. In Python all variables are named references to objects.</p>
 <ul>
 <li>Assignment attches a name to an object</li>
@@ -913,7 +914,7 @@ a == b # True, a and b&#39;s list objects are equivalent
 
 
 </code></pre>
-<h2>Note that Python only passes by object reference to functions and methods.</h2>
+<h3>Note that Python only passes by object reference to functions and methods.</h3>
 
 
       </google-codelab-step>
@@ -1125,8 +1126,8 @@ print(len(school_bus)) # 3
       <google-codelab-step label="Extra About Python Classes" duration="0">
         <h3>NOTE:</h3>
 <ul>
-<li>Python does not have a keyword for interfaces</li>
-<li>Python does have multiple inheritance</li>
+<li>Python <strong>does not</strong> have a keyword for interfaces</li>
+<li>Python <strong>does</strong> have multiple inheritance</li>
 </ul>
 <p>The most common use of multiple inheritance in Python is &#34;Mixin&#34; classes. Classes that provide extra functionality through inheritance. Example: LoggingMixin, AuthenticationMixin.</p>
 <pre><code>class MyFunClass(CoolMixin, EvenCoolerMixin):
@@ -1166,7 +1167,7 @@ print(len(school_bus)) # 3
 <li>a constructor that takes the arguments <code>name: str</code> and <code>num_employees: int</code></li>
 <li>a method <code>get_in_line(user:str)</code> that takes a user name and adds them to the line ( you have to build the internal datastucture to handle this)</li>
 <li>a method <code>get_line()</code> which returns a tuple with the users in the line.</li>
-<li><strong>str</strong> and <em>repl</em> to reflect the class</li>
+<li><strong>str</strong> and <strong>repl</strong> to reflect the class</li>
 </ul>
 
 
@@ -1183,14 +1184,13 @@ print(len(school_bus)) # 3
       </google-codelab-step>
     
       <google-codelab-step label="Testing Python Code" duration="0">
-        <pre><code>Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
-
-the unittest module. Contorary to it&#39;s name can be used for:
-
-- unit tests
-- integration tests
-- acceptance tests
-</code></pre>
+        <p>Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.</p>
+<p>the unittest module. Contorary to it&#39;s name can be used for:</p>
+<ul>
+<li>unit tests</li>
+<li>integration tests</li>
+<li>acceptance tests</li>
+</ul>
 <h3>Concepts</h3>
 <ul>
 <li>TestCase<br>groups togheter related tests functions. The basic unit of thest organization in unittest</li>
@@ -1198,6 +1198,90 @@ the unittest module. Contorary to it&#39;s name can be used for:
 <li>Assertions<br>specific tests for condition and behaviors</li>
 </ul>
 
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Unittest" duration="0">
+        <h3>Example</h3>
+<p>Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.</p>
+<pre><code>def get_even_indexed(iterable):
+    return iterable[::2] 
+
+
+</code></pre>
+<p>We can then write a unittest for the function in this manner:</p>
+<pre><code>import unittest
+
+
+class GetEvenIndexedElementsTest(unittest.TestCase):
+
+    def setUp(self):
+        &#34;&#34;&#34; Fixture for setting up variables for the tests to use&#34;&#34;&#34;
+        self.normal_iterable = (0, 1, 2, 3, 4, 5, 6)
+
+    def test_function_runs(self):
+        &#34;&#34;&#34;Basic test to see that the function runs&#34;&#34;&#34;
+        get_even_indexed(self.normal_iterable)
+
+    def test_function_return_count(self):
+        &#34;&#34;&#34; Check that the result count is correct&#34;&#34;&#34;
+        result = get_even_indexed(self.normal_iterable)
+        self.assertEqual(len(result), 4)
+
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Virtual Environments" duration="0">
+        <h3>Problem</h3>
+<p>Python applications will often use packages and modules that don&#39;t come as part of the standard library. Applications will sometimes need a specific version of a library.</p>
+<p>This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.</p>
+<h3>Solution</h3>
+<p>The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages.</p>
+<p>Different applications can then use different virtual environments. To resolve the earlier example of conflicting requirements, application A can have its own virtual environment with version 1.0 installed while application B has another virtual environment with version 2.0. If application B requires a library be upgraded to version 3.0, this will not affect application A&#39;s environment.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating Virtual Environments" duration="0">
+        <p>The module used to create and manage virtual environments is called <code>venv</code></p>
+<p>From the commandline</p>
+<pre><code>python3 -m venv env_name
+</code></pre>
+<p>This will create the <code>env_name</code>directory if it doesn&#39;t exist, and also create directories inside it containing a copy of the Python interpreter, the standard library, and various supporting files.</p>
+<p>On Windows, run:</p>
+<pre><code>env_name\Scripts\activate.bat
+</code></pre>
+<p>On Unix or MacOS, run:</p>
+<pre><code>source env_name/bin/activate
+</code></pre>
+<p>To deactive</p>
+<pre><code>deactivate
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pip" duration="0">
+        <p>You can install, upgrade, and remove packages using a program called <code>pip</code>. By default pip will install packages from the Python Package Index, (https://pypi.org)[https://pypi.org]</p>
+<h2>Managing Packages with pip</h2>
+<p>pip has a number of subcommands: &#34;search&#34;, &#34;install&#34;, &#34;uninstall&#34;, &#34;freeze&#34;, etc. See <a href="https://docs.python.org/3/installing/index.html#installing-index" target="_blank">Installing Python Modules</a></p>
+<h3>Installing Packages</h3>
+<p>command template</p>
+<pre><code>pip install package_name
+</code></pre>
+<p>You can specify package version directly in the commandline</p>
+<p>command example</p>
+<pre><code>pip install requests==2.6.0
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Requirements.txt" duration="0">
+        
 
       </google-codelab-step>
     
