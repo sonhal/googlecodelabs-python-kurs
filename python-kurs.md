@@ -86,7 +86,7 @@ Maybe the best Python IDE today [link](https://www.jetbrains.com/pycharm/)
 Duration: 2:00
 
 
-Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects. (In a sense, and in conformance to Von Neumann’s model of a “stored program computer,” code is also represented by objects.)
+Objects are Python’s abstraction for data. All data in a Python program is represented by objects or by relations between objects.
 
  - Python is strongly typed and dynamically typed.
 
@@ -94,7 +94,7 @@ Objects are Python’s abstraction for data. All data in a Python program is rep
 
  - Python is really a compiled programming language, but it acts as a interpred language.
 
- - There exist different implementation of Python. The most common and the one we will use in this course will be CPython.
+ - There exist different implementation of Python. The most common, and the one we will use in this course is CPython.
 
  - Python comes with "Batteries included", meaning Python comes with a feature rich standard libary.
 
@@ -103,7 +103,9 @@ Objects are Python’s abstraction for data. All data in a Python program is rep
 ## Python 2 and Python 3
 Duration: 1:00
 
-Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has now turned a corner and has of 2018 taken the mantle of the main version from Python 2. Practicly this means that new Python packages and application will in most cases be written in Python 3. 
+Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.
+
+Practicly this means that new Python packages and application will in most cases be written in Python 3. 
 
 ### Python 2 end of life is january 1 2020.
 
@@ -114,7 +116,7 @@ Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but
 
 In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.
 
-If you can, you should always use Python´s built-in types
+#### If you can, you should always use Python´s built-in types
 
 | Object Type     | Example  |
 | ------------- |:-------------:|
@@ -150,7 +152,7 @@ my_int  = 5
 
 ```
 
-In Python, types are determined automatically at runtime, not in respone to declarations in code.
+In Python, types are determined automatically at runtime, not in response to declarations in code.
 #### This means this is possible in Python
 
 ```python
@@ -328,6 +330,7 @@ bool([1,2,10]) # returns True, not-empty list is truthy
 Duration: 5:00
 
 Python can be used as a interactive calculator, a scripting language,  to build web applications, to create machine learning models and the list goes on.
+
 To facilitate such broad usescope Python has several different "Structures" to execute Python code in. One of the amazing things with Python is how easy it is to get started with a small script, maybe only to test a small idea or a new module. At the same time if you choose you can build solid structures and define clear abstractions in your program.
 
 Here is a rough mental model for the different structures we write Python code in, and their strength/weaknesses.
@@ -339,7 +342,9 @@ Here is a rough mental model for the different structures we write Python code i
 Duration: 5:00
 
 The control structure statements in python use colon ( : ) to indicate termination of the statement.
-After a colon ( : ) in a statement the body of the construct should follow. In Python this block should be indented.
+
+After a colon ( : ) in a statement the body of the construct should follow. This block of code should be indented.
+
 By convention this indentation level is 4 spaces.
 
 ; at the end of statements are not needed.
@@ -398,7 +403,7 @@ Accessing Zen of Python within Python itself
 import this
 ```
 
-```python
+```
 Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
@@ -419,6 +424,32 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
+
+## Python Naming
+
+According to PEP 8 Python programs should follow the following style:
+
+
+#### Class Names
+
+```python
+class CamelCaseClassNames:
+    pass
+```
+
+#### Function Names
+
+```python
+def snake_case_functions():
+    pass
+```
+
+#### Module and Package Names
+Modules should have short, all-lowercase names. Underscores can be used in the module name if it improves readability
+```
+my_module
+```
+
 
 ## Control Structures
 Duration: 3:00
@@ -737,9 +768,9 @@ print(my_list) # [1, 2, 3, 4, 'Mhhh this might cause some confusion for people u
 ## Tuples
 Duration: 2:00
 
-Tuples work like lists, except that elements in tuples cannot change place. Tupels are immutable. After a tuple has been created, the length of the tuple cannot change.
+Tuples work like lists, except that elements in tuples cannot change place. Tuples are immutable. After a tuple has been created, the length of the tuple cannot change.
 
-##### A Tuple is a ordered collection of arbitrary Python objects
+#### Definition: A Tuple is a ordered collection of arbitrary Python objects
 
 #### Example
 
@@ -1166,7 +1197,7 @@ Python is garbage collected. When every reference to a object goes out of scope 
 #### Variables and References
 Python does not really have the samme variables as other languages like C++ or Java. In Python all variables are named references to objects.
 
- - Assignment attches a name to an object
+ - Assignment attaches a name to an object
  - Assigning from one reference to another puts two name tags on the same object.
 
 ![Python referencing](resources/python_ref.png)
@@ -1381,6 +1412,27 @@ word_length = [len(word) for word in words] # [5, 1, 2, 8, 1, 3, 6, 7]
 
 ```
 
+## Dictionary Comprehensions
+
+#### Template
+We have to call .items() since iteration directly on a dict object only yields the keys.
+```python
+
+dict_variable = {key:value for (key,value) in dictonary.items()}
+
+```
+
+
+#### Example
+
+Lets reverse the switch key and value with a comprehension
+```python
+name_and_age = {"Mike": 20, "Monica": 30, "Lars": 43}
+
+age_and_name = {value:key for (key, value) in name_and_age.items()}
+
+```
+
 
 ## Python Classes
 
@@ -1424,7 +1476,7 @@ __methodname__
 
 ```
 
-Most used of them is the ``__init__``` method, used for class instansiation. They're special methods that you can define to add "magic" to your classes. 
+Most used of them is the ```__init__``` method, used for class instansiation. They're special methods that you can define to add "magic" to your classes. 
 
 ### Here are some commonly used magic methods
 
@@ -1581,8 +1633,9 @@ sys.getdefaultencoding()
 
 ## Writing to File
 
-| Character     | Meaning     | 
-| ------------- |:-------------:| 
+| Character     | Meaning            |
+| ------------- |:-----------:|
+| <b>Character</b>     | <b>Meaning</b>           |
 | 'r'           | open for reading (default) | 
 | 'w'           | open for writing, truncating the file first | 
 | 'x'           | open for exclusive creation, failing if the file already exists |
@@ -1591,6 +1644,7 @@ sys.getdefaultencoding()
 | 't'           | text mode (default) |
 | '+'           | open a disk file for updating (reading and writing) |
 | 'U'           | [universal newlines](https://docs.python.org/3/glossary.html#term-universal-newlines) mode (deprecated) |
+
 
 The default mode is 'r' (open for reading text, synonym of 'rt').
 
@@ -1694,9 +1748,9 @@ tests/test_advanced.py
 
 ```
 #### Project Module
- Replace ```sample``` with the name of the project. The ```sample/``` directory is the location of the python code for the project
+ Replace ```sample``` with the name of the project. The ```sample/``` directory is the location of the python code for the project.
 
- #### Licence
+#### Licence
  ```LICENCE``` file.
  This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
 
@@ -1859,4 +1913,16 @@ command example
 pip install requests==2.6.0
 ```
 
-## Requirements.txt
+## A Python Project
+To exercise our new Python skills I will leave you with a small challenge!
+
+### Python Webscraper
+
+Create a small Python program that can be called from the commandline. The program should take a url from the user as the argument to the program.
+
+#### Example
+```python3 -m webscraper https://google.com```
+
+The program should print to the terminal the following information
+
+[TODO]
