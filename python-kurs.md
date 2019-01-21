@@ -1943,12 +1943,15 @@ if "key" in dict_:
 
 #### EAFP
 ```python
+
 try:
     value += dict_["key"]
 except KeyError:
     pass
 
 ```
+
+Some people are going to read this and say that the EAFP version is longer and explicit compared to the LBYL, which is obviously true. But the idea that "explicit is better than implicit" is a key guideline in the design of Python itself, and so the explicitness of the code is on purpose.
 
 ## Python Virtual Environments
 Duration: 5:00
