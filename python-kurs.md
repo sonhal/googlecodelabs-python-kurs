@@ -1832,8 +1832,8 @@ tests/test_advanced.py
  Replace ```sample``` with the name of the project. The ```sample/``` directory is the location of the python code for the project.
 
 #### Licence
- ```LICENCE``` file.
- This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
+
+This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
 
 #### Setup.py
  - Location: ./setup.py 
@@ -2001,12 +2001,11 @@ pip install requests==2.6.0
 
 ## The Project
 
-
 To exercise our new Python skills I will leave you with a small challenge!
 
 ### Python UIO courses descriptions
 
-Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UIO (Universitetet i Oslo) study courses.
+Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UiO (Universitetet i Oslo) study courses.
 
 #### The program will take a course name as a argument from the commandline
 
@@ -2023,4 +2022,4 @@ To complete the task it is recommended to read about the following python packag
  - Requests [link](http://docs.python-requests.org/en/master/)
 
 
-Builind a webscraper with Python toturial  [link](https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3)
+Build a webscraper with Python tutorial  [link](https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3)

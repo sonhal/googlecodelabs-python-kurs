@@ -1416,68 +1416,56 @@ tests/test_advanced.py
 <h3>Project Module</h3>
 <p>Replace <code>sample</code> with the name of the project. The <code>sample/</code> directory is the location of the python code for the project.</p>
 <h3>Licence</h3>
-<pre><code> This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.
-
-#### Setup.py
- - Location: ./setup.py 
- - Purpose:  Package and distribution management.
-If the project is meant to be used as a package you should provide a setup.py file that will handle installation of your package.
-
-More about setup.py here [link](https://packaging.python.org/tutorials/packaging-projects/)
-
-
-#### Requirements File
- - Location: ./requirements.txt 
- - Purpose:  Development dependencies.
-A Pip requirements file should be placed at the root of the repository. It should specify the dependencies required to contribute to the project: testing, building, and generating documentation.
-
-If your project has no development dependencies, or you prefer development environment setup via setup.py, this file may be unnecessary.
-
-#### Documentation
- - Location: ./docs/ 
- - Purpose:  Package reference documentation.
-
-#### Test Suite
- - Location: ./test_sample.py or ./tests 
- - Purpose:  Package integration and unit tests.
-Starting out, a small test suite will often exist in a single file:
-
-./test_sample.py
+<p>This is arguably the most important part of your repository, aside from the source code itself. The full license text and copyright claims should exist in this file.</p>
+<h3>Setup.py</h3>
+<ul>
+<li>Location: ./setup.py</li>
+<li>Purpose:  Package and distribution management.<br>If the project is meant to be used as a package you should provide a setup.py file that will handle installation of your package.</li>
+</ul>
+<p>More about setup.py here <a href="https://packaging.python.org/tutorials/packaging-projects/" target="_blank">link</a></p>
+<h3>Requirements File</h3>
+<ul>
+<li>Location: ./requirements.txt</li>
+<li>Purpose:  Development dependencies.<br>A Pip requirements file should be placed at the root of the repository. It should specify the dependencies required to contribute to the project: testing, building, and generating documentation.</li>
+</ul>
+<p>If your project has no development dependencies, or you prefer development environment setup via setup.py, this file may be unnecessary.</p>
+<h3>Documentation</h3>
+<ul>
+<li>Location: ./docs/</li>
+<li>Purpose:  Package reference documentation.</li>
+</ul>
+<h3>Test Suite</h3>
+<ul>
+<li>Location: ./test_sample.py or ./tests</li>
+<li>Purpose:  Package integration and unit tests.<br>Starting out, a small test suite will often exist in a single file:</li>
+</ul>
+<p>./test_sample.py</p>
 
 
-## Testing Python Code
-Duration: 10:00
-
-Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
-
-the unittest module. Contorary to it&#39;s name can be used for:
-
-- unit tests
-- integration tests
-- acceptance tests
-
-
-#### Concepts
-
-- TestCase
-    groups togheter related tests functions. The basic unit of thest organization in unittest
-
-- Fixtures
-    code that runs before and/or after each test function. Sets up and tears down the testing environment.
-
-- Assertions
-  specific tests for condition and behaviors
+      </google-codelab-step>
+    
+      <google-codelab-step label="Testing Python Code" duration="10">
+        <p>Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.</p>
+<p>the unittest module. Contorary to it&#39;s name can be used for:</p>
+<ul>
+<li>unit tests</li>
+<li>integration tests</li>
+<li>acceptance tests</li>
+</ul>
+<h3>Concepts</h3>
+<ul>
+<li>TestCase<br>groups togheter related tests functions. The basic unit of thest organization in unittest</li>
+<li>Fixtures<br>code that runs before and/or after each test function. Sets up and tears down the testing environment.</li>
+<li>Assertions<br>specific tests for condition and behaviors</li>
+</ul>
 
 
-
-## Unittest
-
-####Example
-Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.
-
-```python
-
-def get_even_indexed(iterable):
+      </google-codelab-step>
+    
+      <google-codelab-step label="Unittest" duration="0">
+        <h3>Example</h3>
+<p>Lets say we have the following function, that returns every element in a iterable object that has a even numbered index.</p>
+<pre><code>def get_even_indexed(iterable):
     return iterable[::2] 
 
 
@@ -1556,7 +1544,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
       <google-codelab-step label="The Project" duration="0">
         <p>To exercise our new Python skills I will leave you with a small challenge!</p>
 <h2>Python UIO courses descriptions</h2>
-<p>Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UIO (Universitetet i Oslo) study courses.</p>
+<p>Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UiO (Universitetet i Oslo) study courses.</p>
 <h3>The program will take a course name as a argument from the commandline</h3>
 <h3>Example</h3>
 <p><code>python3 -m description.py informatikk</code></p>
@@ -1567,7 +1555,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 <li>BeautifulSoup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#" target="_blank">link</a></li>
 <li>Requests <a href="http://docs.python-requests.org/en/master/" target="_blank">link</a></li>
 </ul>
-<p>Builind a webscraper with Python toturial  <a href="https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3" target="_blank">link</a></p>
+<p>Build a webscraper with Python tutorial  <a href="https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3" target="_blank">link</a></p>
 
 
       </google-codelab-step>
