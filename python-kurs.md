@@ -450,6 +450,29 @@ Modules should have short, all-lowercase names. Underscores can be used in the m
 my_module
 ```
 
+#### Python private variables/functions/methods
+
+Python does not have a built-in concept of "private".
+
+The underscore prefix is meant as a hint to another programmer that a variable, function or method starting with a single underscore is intended for internal use. This convention is defined in PEP 8.
+
+#### Example
+
+```python
+
+my_int = 1 # integer intended for public use
+
+_my_int = 1 # integer not inteded for public use
+
+def public_function():
+    pass
+
+def _private__function():
+    pass
+
+```
+
+
 
 ## Control Structures
 Duration: 3:00
