@@ -349,25 +349,52 @@ By convention this indentation level is 4 spaces.
 
 ; at the end of statements are not needed.
 
-````python
+```python
 if var1 == var2:
     dosomething() # Note 4 space indentation
 
 if var1 == var2:
 dosomething() # Indentation ERROR
 
-````
+```
 
 Every new indentation level defines a new block
 
-````python
+```python
 if var1 == var2:
     dosomething()
 
     if var1 is True:
         dosomethingmore()
 
-````
+```
+In languages like Java &&, ||, ! are used for and, or, not.
+In Python we just use those words instead:
+
+```python
+
+if expr or expr2:
+    dosomething()
+
+
+if expr and expr2:
+    dosomethingelse()
+
+if not expr:
+    dothatthing()
+
+
+```
+
+
+For not equal you can use !=
+
+```python
+
+if expr != expr2:
+    dothatthing()
+
+```
 
 Indentation levels in Python code matches the structure of the program.
 
@@ -521,8 +548,6 @@ else:
     print("30 is bigger than 10")
 
 ```
-
-
 
 
 
@@ -924,8 +949,6 @@ print(my_dict.values()) # ["a", "b", "c"]
 
 ```
 
-
-
 ## Modularity
 Duration: 3:00
 
@@ -972,7 +995,6 @@ with request.urlopen("https://gist.githubusercontent.com/sonhal/db9c2f7869c6937b
 
     numbers_in_the_text = []
     for word in words:
-        print(word)
         if word.isdigit():
             int_word = int(word)
             numbers_in_the_text.append(int_word)
@@ -1197,6 +1219,39 @@ python3 web_reader.py
 
 Now we can  import the web_reader module without having the code excetute and we can still execute the code from the commandline
 
+#### Commandline Arguments
+
+passing arguments to our program is a good way to make more usable scripts. Python provides direct access to the passed arguments and a package for more sophisticated CLI applications
+
+
+#### Basic Python commandline argument accessing
+```python
+
+import sys
+
+
+if __name__ == "__main__":
+    first_cli_argument = sys.argv[1] # sys.argv[0] is the module python is executing
+
+
+```
+
+#### Advanced Python CLI argument handling
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Process some integers.')
+
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+
+
+```
+
 
 ## Python module/script/program
 Duration: 1:00
@@ -1266,8 +1321,6 @@ a == b # True, a and b's list objects are equivalent
 ```
 
 #### Note that Python only passes by object reference to functions and methods.
-
-
 
 
 
@@ -1488,6 +1541,7 @@ class ClassName:
 ```
 
 ## Magic Methods
+Duration: 5:00
 
 Python’s classes are famous for their magic methods , commonly called dunder (double underscore) methods. 
 
@@ -1616,6 +1670,7 @@ class Cal:
 ```
 
 ## Exercise - Classes
+Duration: 10:00
 
 #### Create a NAVKontor class
 The class should have
@@ -1629,6 +1684,7 @@ The class should have
 
 
 ## Files and Resources
+Duration: 10:00
 
 Python comes with a built-in open function.
 
@@ -1703,6 +1759,7 @@ f.close()
 
 
 ## Reading from File
+Duration: 5:00
 
 ### Basic read
 ```python
@@ -1752,6 +1809,7 @@ def file_printer(filename):
 ```
 
 ## A Python Project
+Duration: 10:00
 
 Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project's architecture.
 
@@ -1805,6 +1863,8 @@ Starting out, a small test suite will often exist in a single file:
 
 
 ## Testing Python Code
+Duration: 10:00
+
 Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
 
 the unittest module. Contorary to it's name can be used for:
@@ -1869,6 +1929,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
 
 ## Python Virtual Environments
+Duration: 5:00
 
 #### Problem
 Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library.
@@ -1883,6 +1944,7 @@ Different applications can then use different virtual environments. To resolve t
 
 
 ## Creating Virtual Environments
+Duration: 5:00
 
 The module used to create and manage virtual environments is called ```venv```
 
@@ -1912,6 +1974,7 @@ deactivate
 ```
 
 ## Pip
+Duration: 5:00
 
 You can install, upgrade, and remove packages using a program called ```pip```. By default pip will install packages from the Python Package Index, (https://pypi.org)[https://pypi.org]
 
@@ -1936,16 +1999,28 @@ command example
 pip install requests==2.6.0
 ```
 
-## A Python Project
+## The Project
+
+
 To exercise our new Python skills I will leave you with a small challenge!
 
-### Python Webscraper
+### Python UIO courses descriptions
 
-Create a small Python program that can be called from the commandline. The program should take a url from the user as the argument to the program.
+Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UIO (Universitetet i Oslo) study courses.
+
+#### The program will take a course name as a argument from the commandline
 
 #### Example
-```python3 -m webscraper https://google.com```
+```python3 -m description.py informatikk```
 
-The program should print to the terminal the following information
+The program should print to the terminal the following information:
 
-[TODO]
+```Ønsker du ekstra kompetanse innen informatikk eller en bredere forståelse for faget? Da er dette årsenheten for deg, uavhengig av bakgrunn og arbeidsområde.``
+
+To complete the task it is recommended to read about the following python packages:
+
+ - BeautifulSoup [link](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#)
+ - Requests [link](http://docs.python-requests.org/en/master/)
+
+
+Builind a webscraper with Python toturial  [link](https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3)

@@ -313,6 +313,24 @@ dosomething() # Indentation ERROR
         dosomethingmore()
 
 </code></pre>
+<p>In languages like Java &amp;&amp;, ||, ! are used for and, or, not.<br>In Python we just use those words instead:</p>
+<pre><code>if expr or expr2:
+    dosomething()
+
+
+if expr and expr2:
+    dosomethingelse()
+
+if not expr:
+    dothatthing()
+
+
+</code></pre>
+<p>For not equal you can use !=</p>
+<pre><code>if expr != expr2:
+    dothatthing()
+
+</code></pre>
 <p>Indentation levels in Python code matches the structure of the program.</p>
 <h2>Significant whitespace Pros</h2>
 <ol type="1">
@@ -738,7 +756,6 @@ with request.urlopen(&#34;https://gist.githubusercontent.com/sonhal/db9c2f7869c6
 
     numbers_in_the_text = []
     for word in words:
-        print(word)
         if word.isdigit():
             int_word = int(word)
             numbers_in_the_text.append(int_word)
@@ -893,6 +910,30 @@ def read_from_url(url: str) -&gt; Sequence:
 
 </code></pre>
 <p>Now we can  import the web_reader module without having the code excetute and we can still execute the code from the commandline</p>
+<h3>Commandline Arguments</h3>
+<p>passing arguments to our program is a good way to make more usable scripts. Python provides direct access to the passed arguments and a package for more sophisticated CLI applications</p>
+<h3>Basic Python commandline argument accessing</h3>
+<pre><code>import sys
+
+
+if __name__ == &#34;__main__&#34;:
+    first_cli_argument = sys.argv[1] # sys.argv[0] is the module python is executing
+
+
+</code></pre>
+<h3>Advanced Python CLI argument handling</h3>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser(description=&#39;Process some integers.&#39;)
+
+parser.add_argument(&#39;integers&#39;, metavar=&#39;N&#39;, type=int, nargs=&#39;+&#39;,
+                    help=&#39;an integer for the accumulator&#39;)
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+
+
+</code></pre>
 
 
       </google-codelab-step>
@@ -1128,7 +1169,7 @@ age_and_name = {value:key for (key, value) in name_and_age.items()}
 
       </google-codelab-step>
     
-      <google-codelab-step label="Magic Methods" duration="0">
+      <google-codelab-step label="Magic Methods" duration="5">
         <p>Python&#39;s classes are famous for their magic methods , commonly called dunder (double underscore) methods.</p>
 <p>they are named in the same way:</p>
 <pre><code>__methodname__
@@ -1222,7 +1263,7 @@ print(len(school_bus)) # 3
 
       </google-codelab-step>
     
-      <google-codelab-step label="Exercise - Classes" duration="0">
+      <google-codelab-step label="Exercise - Classes" duration="10">
         <h3>Create a NAVKontor class</h3>
 <p>The class should have</p>
 <ul>
@@ -1235,7 +1276,7 @@ print(len(school_bus)) # 3
 
       </google-codelab-step>
     
-      <google-codelab-step label="Files and Resources" duration="0">
+      <google-codelab-step label="Files and Resources" duration="10">
         <p>Python comes with a built-in open function.</p>
 <pre><code>open()
 </code></pre>
@@ -1314,7 +1355,7 @@ f.close()
 
       </google-codelab-step>
     
-      <google-codelab-step label="Reading from File" duration="0">
+      <google-codelab-step label="Reading from File" duration="5">
         <h2>Basic read</h2>
 <pre><code>of = open(&#34;cool_text&#34;, mode=&#34;rt&#34;, encoding=&#34;utf-8&#34;)
 cool_string = of.read()
@@ -1357,7 +1398,7 @@ print(cool_strings) # [&#34;Python courses are the best!\n&#34;], [&#34;It is so
 
       </google-codelab-step>
     
-      <google-codelab-step label="A Python Project" duration="0">
+      <google-codelab-step label="A Python Project" duration="10">
         <p>Just as Code Style, API Design, and Automation are essential for a healthy development cycle, Repository structure is a crucial part of your project&#39;s architecture.</p>
 <h2>Template Python Project</h2>
 <pre><code>README.rst
@@ -1405,6 +1446,8 @@ Starting out, a small test suite will often exist in a single file:
 
 
 ## Testing Python Code
+Duration: 10:00
+
 Testing code is good, we should all write test for our code. Python comes with a unittest module in the standard libary.
 
 the unittest module. Contorary to it&#39;s name can be used for:
@@ -1464,7 +1507,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
       </google-codelab-step>
     
-      <google-codelab-step label="Python Virtual Environments" duration="0">
+      <google-codelab-step label="Python Virtual Environments" duration="5">
         <h3>Problem</h3>
 <p>Python applications will often use packages and modules that don&#39;t come as part of the standard library. Applications will sometimes need a specific version of a library.</p>
 <p>This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.</p>
@@ -1475,7 +1518,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
       </google-codelab-step>
     
-      <google-codelab-step label="Creating Virtual Environments" duration="0">
+      <google-codelab-step label="Creating Virtual Environments" duration="5">
         <p>The module used to create and manage virtual environments is called <code>venv</code></p>
 <p>From the commandline</p>
 <pre><code>python3 -m venv env_name
@@ -1494,7 +1537,7 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
       </google-codelab-step>
     
-      <google-codelab-step label="Pip" duration="0">
+      <google-codelab-step label="Pip" duration="5">
         <p>You can install, upgrade, and remove packages using a program called <code>pip</code>. By default pip will install packages from the Python Package Index, (https://pypi.org)[https://pypi.org]</p>
 <h2>Managing Packages with pip</h2>
 <p>pip has a number of subcommands: &#34;search&#34;, &#34;install&#34;, &#34;uninstall&#34;, &#34;freeze&#34;, etc. See <a href="https://docs.python.org/3/installing/index.html#installing-index" target="_blank">Installing Python Modules</a></p>
@@ -1510,14 +1553,21 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
       </google-codelab-step>
     
-      <google-codelab-step label="A Python Project" duration="0">
+      <google-codelab-step label="The Project" duration="0">
         <p>To exercise our new Python skills I will leave you with a small challenge!</p>
-<h2>Python Webscraper</h2>
-<p>Create a small Python program that can be called from the commandline. The program should take a url from the user as the argument to the program.</p>
+<h2>Python UIO courses descriptions</h2>
+<p>Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UIO (Universitetet i Oslo) study courses.</p>
+<h3>The program will take a course name as a argument from the commandline</h3>
 <h3>Example</h3>
-<p><code>python3 -m webscraper https://google.com</code></p>
-<p>The program should print to the terminal the following information</p>
-<p>[TODO]</p>
+<p><code>python3 -m description.py informatikk</code></p>
+<p>The program should print to the terminal the following information:</p>
+<p>`<code>Ønsker du ekstra kompetanse innen informatikk eller en bredere forståelse for faget? Da er dette årsenheten for deg, uavhengig av bakgrunn og arbeidsområde.</code></p>
+<p>To complete the task it is recommended to read about the following python packages:</p>
+<ul>
+<li>BeautifulSoup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#" target="_blank">link</a></li>
+<li>Requests <a href="http://docs.python-requests.org/en/master/" target="_blank">link</a></li>
+</ul>
+<p>Builind a webscraper with Python toturial  <a href="https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3" target="_blank">link</a></p>
 
 
       </google-codelab-step>
