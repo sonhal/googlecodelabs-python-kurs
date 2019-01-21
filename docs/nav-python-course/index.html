@@ -1495,6 +1495,25 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
       </google-codelab-step>
     
+      <google-codelab-step label="Python EAFP vs LBYL" duration="5">
+        <p>One idiomatic practice in Python that often surprises people coming from programming languages where exceptions are considered, well, exceptional, is EAFP: &#34;it&#39;s easier to ask for forgiveness than permission&#34;. Quickly, EAFP means that you should just do what you expect to work and if an exception might be thrown from the operation then catch it and deal with that fact.</p>
+<p>What people are traditionally used to is LBYL: &#34;look before you leap&#34;. Compared to EAFP, LBYL is when you first check whether something will succeed and only proceed if you know it will work.</p>
+<h3>LBYL</h3>
+<pre><code>if &#34;key&#34; in dict_:
+    value += dict_[&#34;key&#34;]
+
+</code></pre>
+<h3>EAFP</h3>
+<pre><code>try:
+    value += dict_[&#34;key&#34;]
+except KeyError:
+    pass
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Python Virtual Environments" duration="5">
         <h3>Problem</h3>
 <p>Python applications will often use packages and modules that don&#39;t come as part of the standard library. Applications will sometimes need a specific version of a library.</p>

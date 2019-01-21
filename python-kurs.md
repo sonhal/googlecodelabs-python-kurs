@@ -1926,7 +1926,29 @@ class GetEvenIndexedElementsTest(unittest.TestCase):
 
 ```
 
+## Python EAFP vs LBYL
+Duration: 5:00
 
+One idiomatic practice in Python that often surprises people coming from programming languages where exceptions are considered, well, exceptional, is EAFP: "it's easier to ask for forgiveness than permission". Quickly, EAFP means that you should just do what you expect to work and if an exception might be thrown from the operation then catch it and deal with that fact.
+
+ What people are traditionally used to is LBYL: "look before you leap". Compared to EAFP, LBYL is when you first check whether something will succeed and only proceed if you know it will work.
+
+#### LBYL
+```python
+
+if "key" in dict_:
+    value += dict_["key"]
+
+```
+
+#### EAFP
+```python
+try:
+    value += dict_["key"]
+except KeyError:
+    pass
+
+```
 
 ## Python Virtual Environments
 Duration: 5:00
