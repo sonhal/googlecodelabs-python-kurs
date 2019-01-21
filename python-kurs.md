@@ -467,7 +467,7 @@ _my_int = 1 # integer not inteded for public use
 def public_function():
     pass
 
-def _private__function():
+def _private_function():
     pass
 
 ```
