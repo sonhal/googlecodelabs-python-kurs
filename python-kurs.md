@@ -2026,20 +2026,22 @@ pip install requests==2.6.0
 
 ## The Project
 
-To exercise our new Python skills I will leave you with a small challenge!
+To exercise our new Python skills I will leave you with a (not so) small challenge!
 
 ### Python UIO courses descriptions
 
-Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UiO (Universitetet i Oslo) study courses.
+Create a small Python program that can be called from the commandline. The programs purpose is to give the user the description of UiO (Universitetet i Oslo) study courses with a title matching the provided argument.
 
 #### The program will take a course name as a argument from the commandline
 
 #### Example
-```python3 -m description.py informatikk```
+```python3 -m scraper.py informatikk```
 
-The program should print to the terminal the following information:
+The program should print to the terminal the following information for each matching course:
 
-```Ønsker du ekstra kompetanse innen informatikk eller en bredere forståelse for faget? Da er dette årsenheten for deg, uavhengig av bakgrunn og arbeidsområde.``
+ - course name
+ - course description
+ 
 
 To complete the task it is recommended to read about the following python packages:
 
@@ -2048,3 +2050,13 @@ To complete the task it is recommended to read about the following python packag
 
 
 Build a webscraper with Python tutorial  [link](https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3)
+
+
+## Stretch Goals for bragging rights
+
+ - Handle several user aruments
+    Example: ``` python scraper.py informatikk master```
+
+ - Write result to file
+ 
+ - Print more information about the courses (points, duration, deadlines)
