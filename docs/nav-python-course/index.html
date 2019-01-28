@@ -1562,20 +1562,33 @@ except KeyError:
       </google-codelab-step>
     
       <google-codelab-step label="The Project" duration="0">
-        <p>To exercise our new Python skills I will leave you with a small challenge!</p>
+        <p>To exercise our new Python skills I will leave you with a (not so) small challenge!</p>
 <h2>Python UIO courses descriptions</h2>
-<p>Create a small Python program that can be called from the commandline. The programs porpouse is to give the user the description of UiO (Universitetet i Oslo) study courses.</p>
+<p>Create a small Python program that can be called from the commandline. The programs purpose is to give the user the description of UiO (Universitetet i Oslo) study courses with a title matching the provided argument.</p>
 <h3>The program will take a course name as a argument from the commandline</h3>
 <h3>Example</h3>
-<p><code>python3 -m description.py informatikk</code></p>
-<p>The program should print to the terminal the following information:</p>
-<p>`<code>Ønsker du ekstra kompetanse innen informatikk eller en bredere forståelse for faget? Da er dette årsenheten for deg, uavhengig av bakgrunn og arbeidsområde.</code></p>
+<p><code>python3 -m scraper.py informatikk</code></p>
+<p>The program should print to the terminal the following information for each matching course:</p>
+<ul>
+<li>course name</li>
+<li>course description</li>
+</ul>
 <p>To complete the task it is recommended to read about the following python packages:</p>
 <ul>
 <li>BeautifulSoup <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#" target="_blank">link</a></li>
 <li>Requests <a href="http://docs.python-requests.org/en/master/" target="_blank">link</a></li>
 </ul>
 <p>Build a webscraper with Python tutorial  <a href="https://towardsdatascience.com/building-a-web-scraper-in-python-fb8f48597ec3" target="_blank">link</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Stretch Goals for bragging rights" duration="0">
+        <ul>
+<li>Handle several user aruments<br>Example: <code>python scraper.py informatikk master</code></li>
+<li>Write result to file</li>
+<li>Print more information about the courses (points, duration, deadlines)</li>
+</ul>
 
 
       </google-codelab-step>
