@@ -138,3 +138,105 @@ Practicly this means that new Python packages and application will in most cases
 ![Python 2 to Python 3](resources/2_to_3.jpeg)
 
 
+## Python Basics
+
+
+Aritmetric
+
+#### In the REPL try:
+
+adding
+```python
+ 2 + 2
+```
+subtracting
+```python
+ 3 - 2
+```
+
+multiplying
+```python
+ 4 * 2
+```
+
+dividing
+```python
+ 4 / 2
+```
+
+exponent
+```python
+ 4 ** 3
+```
+
+modulus
+```python
+ 4 % 2
+```
+
+integer division
+```python
+ 3 // 2
+```
+
+## On errors
+
+#### Errors are Okay!
+
+Programs will crash if they contain code the computer can’t understand, which will cause Python to show an error message. An error message won’t break your computer, though, so don’t be afraid to make mistakes. A crash just means the program stopped running unexpectedly.
+
+## Python Objects and Types
+
+In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.
+
+#### Python built-in types
+
+| Object Type     | Example  |
+| ------------- |:-------------:|
+| Numbers     | 12 , 343.34 , Decimal() |
+| Strings    | "sauna", 'python' | 
+| Lists| [1, "two, [ 4, 5] ]| 
+| Dictonaries | {"breakfast": "eggs", "number": 1, "nested": {1: "element"}} | 
+| Tuples | (1, "bacon", 13.2, ["data", 1]) | 
+| Sets | set("aaaa") -> {"a"}| 
+| Booleans| True, False | 
+| NoneType | None | 
+
+## Variables
+
+When programming you will need to store values for later use. The way we do this in Python is to give our values names we can later call to get back the value we stored in them.
+
+Creating a variable containing the integer 5
+```python
+
+my_int  = 5
+
+```
+
+We can then later use our variable to do some work. Note that in this case we store the result in a new variable.
+```python
+
+result = my_int * 10
+
+```
+
+## Strings
+
+Strings represent characters in Python and is created like this:
+
+```python
+
+"A string"
+
+'Also a string'
+
+```
+
+You can use both " and ', to create a String.
+
+#### Assigning a string to a variable
+```python
+
+my_string  = "My super string!"
+
+```
