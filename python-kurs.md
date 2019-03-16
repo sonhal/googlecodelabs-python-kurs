@@ -2028,7 +2028,7 @@ pip install requests==2.6.0
 
 To exercise our new Python skills I will leave you with a (not so) small challenge!
 
-### Python UIO courses descriptions
+### Python UiO courses descriptions
 
 Create a small Python program that can be called from the commandline. The programs purpose is to give the user the description of UiO (Universitetet i Oslo) study courses with a title matching the provided argument.
 
