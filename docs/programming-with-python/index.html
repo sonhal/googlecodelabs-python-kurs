@@ -1,0 +1,185 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Learn Programing with Python!</title>
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../elements/codelab.html">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <style is="custom-style">
+    body {
+      font-family: "Roboto",sans-serif;
+      background: var(--google-codelab-background, #F8F9FA);
+    }
+  </style>
+  
+</head>
+<body unresolved class="fullbleed">
+
+  <google-codelab title="Learn Programing with Python!"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="About this Course" duration="5">
+        <p><img alt="Python Logo" src="img/7c140a05f35764cf.svg"></p>
+<p>This course will walk you through the basic concepts of Programming using the Python programming language.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Programming 1" duration="0">
+        <p>Programming is simply the act of entering instructions for the computer to perform. These instructions might crunch some numbers, modify text, look up information in files, or communicate with other computers over the Internet.</p>
+<p>A program is like a:</p>
+<ul>
+<li>Cooking recipe</li>
+<li>Ikea assembly manual</li>
+</ul>
+<p>But for the computer!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Programming 2" duration="0">
+        <p>All programs, written in any language uses the same basic building blocks</p>
+<p>Her are a few of the most common:</p>
+<ul>
+<li>&#34;Do this; Then do that&#34;</li>
+<li>&#34;If this condition is true, perform this action; otherwise, do that action&#34;</li>
+<li>&#34;Do this action that number of times&#34;</li>
+<li>&#34;Keep doing that until this condition is true&#34;</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Programming 3" duration="0">
+        <p>For most people, their computer is just an appliance instead of a tool. But by learning how to program, you&#39;ll gain access to one of the most powerful tools of the modern world, and you&#39;ll have fun along the way. Programming isn&#39;t brain surgery—it&#39;s fine for amateurs to experiment and make mistakes.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python" duration="0">
+        <p>Python is a clear and powerful object-oriented programming language, comparable to Perl, Ruby, Scheme, or Java.</p>
+<p>Developed by Guido van Rossum</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Programming - big picture" duration="0">
+        <p><img alt="Python code process" src="img/8ea3f1ac30d1a620.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Installation" duration="10">
+        <h2>Windows</h2>
+<ul>
+<li>Go to https://www.python.org/downloads/</li>
+<li>Download the latest version of Python (as of this course being written: Python 3.7.2)</li>
+<li>Run the installer</li>
+<li>enable PATH<br><img alt="Python Installer image" src="img/30575e416e06e8cd.png"></li>
+<li>click [Install now]</li>
+</ul>
+<p>Test that Python is properly installed by running</p>
+<pre><code>python --version
+</code></pre>
+<p>in a CMD/Powershell shell.<br>In case of errors reference the - Using Python on Windows page: <a href="https://docs.python.org/3/using/windows.html" target="_blank">link</a></p>
+<h2>Linux</h2>
+<p>Ubuntu</p>
+<pre><code>sudo apt-get update
+sudo apt-get install python3.7
+python3 --version
+</code></pre>
+<h2>Mac</h2>
+<p>On macOS, the best way to install Python 3 is to use Homebrew. Not familiar with homebrew? <a href="https://brew.sh/" target="_blank">link</a></p>
+<pre><code>brew install python3
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Table-Of-Contents" duration="1">
+        <p>There are several tools installed with the Python interpeter. Here are some of them:</p>
+<table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p>python interpreter</p>
+</td><td colspan="1" rowspan="1"><p>The python interpreter. The executable that can be called directly from the commandline/terminal to start a new interactive python session (REPL) or to run python modules/files/packages</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>pip</p>
+</td><td colspan="1" rowspan="1"><p>The Python package manager. The official Python package manager. Lets the user download and manage third-party packages hosted on the Python package index (PyPI)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>IDLE</p>
+</td><td colspan="1" rowspan="1"><p>IDLE is Python&#39;s Integrated Development and Learning Environment. Its a Python IDE for and by Python</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>pydoc</p>
+</td><td colspan="1" rowspan="1"><p>The pydoc module automatically generates documentation from Python modules.</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Development Tools" duration="0">
+        <p>Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use porpouse built tools for Python development.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python a overview" duration="2">
+        <p>Objects are Python&#39;s abstraction for data. All data in a Python program is represented by objects or by relations between objects.</p>
+<ul>
+<li>Python is strongly typed and dynamically typed.</li>
+<li>Python is a general porpouse progragramming language. It is not the best choice for time critical or memory constrained tasks.</li>
+<li>Python is really a compiled programming language, but it acts as a interpred language.</li>
+<li>There exist different implementation of Python. The most common, and the one we will use in this course is CPython.</li>
+<li>Python comes with &#34;Batteries included&#34;, meaning Python comes with a feature rich standard libary.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python 2 and Python 3" duration="1">
+        <p>Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.</p>
+<p>Practicly this means that new Python packages and application will in most cases be written in Python 3.</p>
+<h2>Python 2 end of life is january 1 2020.</h2>
+<p><img alt="Python 2 to Python 3" src="img/41d6e8981000e655.jpeg"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49880327-14', 'auto');
+
+    (function() {
+      var gaCodelab = '';
+      if (gaCodelab) {
+        ga('create', gaCodelab, 'auto', {name: 'codelab'});
+      }
+
+      var gaView;
+      var parts = location.search.substring(1).split('&');
+      for (var i = 0; i < parts.length; i++) {
+        var param = parts[i].split('=');
+        if (param[0] === 'viewga') {
+          gaView = param[1];
+          break;
+        }
+      }
+      if (gaView && gaView !== gaCodelab) {
+        ga('create', gaView, 'auto', {name: 'view'});
+      }
+    })();
+  </script>
+
+</body>
+</html>
