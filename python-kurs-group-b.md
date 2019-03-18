@@ -737,17 +737,77 @@ for i in range(10):
 
 ## Exercise 5
 
-Create a program that will take a number "n" and multiply it with itself "n" times.
+Create a program that prompts the user for a number "n" and multiply it with itself "n" times.
 The program will print the sum for each step in the multiplication.
 
 #### Use a for loop to solve the exercise
 
 Example
 ```
-python my_multi.py 5
+python my_multi.py
+give me a number: 5
 5
 25
 125
 625
 3125
 ```
+
+
+## importing modules
+
+All Python programs can call a basic set of functions called built-in functions, including the print(), input(), and len() functions you’ve seen before. Python also comes with a set of modules called the standard library. Each module is a Python program that contains a related group of functions that can be embedded in your programs. For example, the math module has mathematics-related functions, the random module has random number–related functions, and so on.
+
+Before you can use the functions in a module, you must import the module with an import statement. In code, an import statement consists of the following:
+
+ - The import keyword
+
+ - The name of the module
+
+ - Optionally, more module names, as long as they are separated by commas
+
+```python
+import math
+
+math.pow(2,2) # 4.0
+
+```
+
+
+## Functions
+You’re already familiar with the print(), input(), and len() functions from the previous chapters. Python provides several builtin functions like these, but you can also write your own functions. A function is like a mini-program within a program.
+
+#### A python function
+
+```python
+
+def greeter(name):
+    print("Hello " + str(name) + "!")
+
+```
+
+
+## Functions with return statement
+When creating a function using the def statement, you can specify what the return value should be with a return statement. A return statement consists of the following:
+
+- The return keyword
+
+- The value or expression that the function should return
+
+
+```python
+
+def booer(name):
+    return "Booo " + str(name) + "!")
+
+
+result = booer("Sondre")
+
+```
+
+
+## Exercise 6
+
+Create a function that takes a string and returns the number of A's in the string.
+
+

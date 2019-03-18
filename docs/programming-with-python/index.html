@@ -626,16 +626,68 @@ Do you want to continue? no
       </google-codelab-step>
     
       <google-codelab-step label="Exercise 5" duration="0">
-        <p>Create a program that will take a number &#34;n&#34; and multiply it with itself &#34;n&#34; times.<br>The program will print the sum for each step in the multiplication.</p>
+        <p>Create a program that prompts the user for a number &#34;n&#34; and multiply it with itself &#34;n&#34; times.<br>The program will print the sum for each step in the multiplication.</p>
 <h3>Use a for loop to solve the exercise</h3>
 <p>Example</p>
-<pre><code>python my_multi.py 5
+<pre><code>python my_multi.py
+give me a number: 5
 5
 25
 125
 625
 3125
 </code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="importing modules" duration="0">
+        <p>All Python programs can call a basic set of functions called built-in functions, including the print(), input(), and len() functions you&#39;ve seen before. Python also comes with a set of modules called the standard library. Each module is a Python program that contains a related group of functions that can be embedded in your programs. For example, the math module has mathematics-related functions, the random module has random number–related functions, and so on.</p>
+<p>Before you can use the functions in a module, you must import the module with an import statement. In code, an import statement consists of the following:</p>
+<ul>
+<li>The import keyword</li>
+<li>The name of the module</li>
+<li>Optionally, more module names, as long as they are separated by commas</li>
+</ul>
+<pre><code>import math
+
+math.pow(2,2) # 4.0
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Functions" duration="0">
+        <p>You&#39;re already familiar with the print(), input(), and len() functions from the previous chapters. Python provides several builtin functions like these, but you can also write your own functions. A function is like a mini-program within a program.</p>
+<h3>A python function</h3>
+<pre><code>def greeter(name):
+    print(&#34;Hello &#34; + str(name) + &#34;!&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Functions with return statement" duration="0">
+        <p>When creating a function using the def statement, you can specify what the return value should be with a return statement. A return statement consists of the following:</p>
+<ul>
+<li>The return keyword</li>
+<li>The value or expression that the function should return</li>
+</ul>
+<pre><code>def booer(name):
+    return &#34;Booo &#34; + str(name) + &#34;!&#34;)
+
+
+result = booer(&#34;Sondre&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise 6" duration="0">
+        <p>Create a function that takes a string and returns the number of A&#39;s in the string.</p>
 
 
       </google-codelab-step>
