@@ -731,3 +731,21 @@ for i in range(10):
     print(i)
 
 ```
+
+
+## Exercise 5
+
+Create a program that will take a number "n" and multiply it with itself "n" times.
+The program will print the sum for each step in the multiplication.
+
+#### Use a for loop to solve the exercise
+
+Example
+```
+python my_multi.py 5
+5
+25
+125
+625
+3125
+```
