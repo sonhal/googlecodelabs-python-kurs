@@ -31,7 +31,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Programming 1" duration="0">
+      <google-codelab-step label="Programming 1" duration="5">
         <p>Programming is simply the act of entering instructions for the computer to perform. These instructions might crunch some numbers, modify text, look up information in files, or communicate with other computers over the Internet.</p>
 <p>A program is like a:</p>
 <ul>
@@ -43,7 +43,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Programming 2" duration="0">
+      <google-codelab-step label="Programming 2" duration="5">
         <p>All programs, written in any language uses the same basic building blocks</p>
 <p>Her are a few of the most common:</p>
 <ul>
@@ -56,7 +56,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Programming 3" duration="0">
+      <google-codelab-step label="Programming 3" duration="5">
         <p>For most people, their computer is just an appliance instead of a tool. But by learning how to program, you&#39;ll gain access to one of the most powerful tools of the modern world, and you&#39;ll have fun along the way. Programming isn&#39;t brain surgery—it&#39;s fine for amateurs to experiment and make mistakes.</p>
 
 
@@ -151,7 +151,7 @@ python3 --version
 
       </google-codelab-step>
     
-      <google-codelab-step label="Python Basics" duration="0">
+      <google-codelab-step label="Python Basics" duration="5">
         <p>Aritmetric</p>
 <h3>In the REPL try:</h3>
 <p>adding</p>
@@ -179,14 +179,14 @@ python3 --version
 
       </google-codelab-step>
     
-      <google-codelab-step label="On errors" duration="0">
+      <google-codelab-step label="On errors" duration="1">
         <h3>Errors are Okay!</h3>
 <p>Programs will crash if they contain code the computer can&#39;t understand, which will cause Python to show an error message. An error message won&#39;t break your computer, though, so don&#39;t be afraid to make mistakes. A crash just means the program stopped running unexpectedly.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Python Objects and Types" duration="0">
+      <google-codelab-step label="Python Objects and Types" duration="5">
         <p>In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.</p>
 <h3>Python built-in types</h3>
 <table>
@@ -220,8 +220,14 @@ python3 --version
 
       </google-codelab-step>
     
-      <google-codelab-step label="Variables" duration="0">
+      <google-codelab-step label="Variables" duration="5">
         <p>When programming you will need to store values for later use. The way we do this in Python is to give our values names we can later call to get back the value we stored in them.</p>
+<h3>Variable names</h3>
+<ul>
+<li>It can be only one word.</li>
+<li>It can use only letters, numbers, and the underscore (_) character.</li>
+<li>It can&#39;t begin with a number.</li>
+</ul>
 <p>Creating a variable containing the integer 5</p>
 <pre><code>my_int  = 5
 
@@ -230,11 +236,12 @@ python3 --version
 <pre><code>result = my_int * 10
 
 </code></pre>
+<p><img alt="Python variable image" src="img/15885e593c07995b.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Strings" duration="0">
+      <google-codelab-step label="Strings" duration="5">
         <p>Strings represent characters in Python and is created like this:</p>
 <pre><code>&#34;A string&#34;
 
@@ -244,6 +251,363 @@ python3 --version
 <p>You can use both &#34; and ‘, to create a String.</p>
 <h3>Assigning a string to a variable</h3>
 <pre><code>my_string  = &#34;My super string!&#34;
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Working with Strings" duration="5">
+        <p>The meaning of an operator may change based on the data types of the values next to it. With Integers the + operator adds the two numbers. But when used with Strings it joins the two Strings into a new String.</p>
+<pre><code>my_joined_string = &#34;Hello &#34; + &#34;World!&#34; 
+
+</code></pre>
+<p>But you cannot do this</p>
+<pre><code>my_joined_string = &#34;Hello &#34; + 50
+
+</code></pre>
+<p>Because the two values on either side of the + operator are of different types.</p>
+<p>Multiplying Strings and numbers on the otherhand does work</p>
+<pre><code>my_joined_string = &#34;Hello,&#34; * 2 # &#39;Hello,Hello,&#39;
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Python Built-in Functions" duration="5">
+        <p>The Python interpreter has a number of functions and types built into it that are always available.<br>The full list of Python built-in functions can be found here: <a href="https://docs.python.org/3/library/functions.html" target="_blank">link</a></p>
+<h2>Important Built-in Functions</h2>
+<pre><code>len() # Return the length (the number of items) of an object. 
+
+input() # The function then reads a line from input, converts it to a string
+
+print() # Prints to stdout
+
+bool() # returns the True or False 
+
+help() # Invoke the built-in help system. (This function is intended for interactive use(REPL).)
+
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Writting a Python program" duration="5">
+        <p>A Python program is nothing more than a text file with a fancy file ending &#34;.py&#34;. To create our own program we need to do nothing more than write Python code in a text file and run the file with the Python interpreter.</p>
+<p>This will run the code written in the file &#34;my_program.py&#34;</p>
+<pre><code>python my_program.py 
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise 1" duration="10">
+        <p>It is time to write your first Python program!</p>
+<ol type="1">
+<li>Create a new file in any text editor</li>
+<li>Paste in the following Python code:</li>
+</ol>
+<pre><code>print(&#34;Welcome to my program!&#34;)
+user_age = input(&#34;Please enter your age&#34;)
+user_name = input(&#34;Please enter your name&#34;)
+
+print(&#34;Thank you!&#34;)
+print(&#34;Your name is: &#34; + user_name + &#34; and your age is: &#34; + str(user_age))
+
+</code></pre>
+<ol type="1">
+<li>Save the file with the name: <code>my_first_program.py</code></li>
+<li>Open a Command Prompt (CMD/Terminal)</li>
+<li>Navigate to the folder where you saved the file</li>
+<li>run the program <code>python my_first_program.py</code></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Converting between types" duration="5">
+        <p>Every variable in your Python program has a type. Python is dynamicaly typed so the type and value of the thing a variable points to can change, but the value it points to will always have a type.</p>
+<h3>We can convert between built-in types with the built-in type conversion functions:</h3>
+<pre><code>str()
+
+</code></pre>
+<pre><code>int()
+
+</code></pre>
+<pre><code>float()
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise 2" duration="10">
+        <p>Create a program that asks a user for two numbers.<br>Print the numbers back to the user on a single line.</p>
+<p>Hint: str() will come in handy here!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Flow Control" duration="5">
+        <p>Controll flow is the mechanisims a programmer uses to change what the program should do based on the state of the program.</p>
+<p><img alt="Controll Flow image" src="img/ce6a2fff0bfd1079.png"></p>
+<p>But before you learn about flow control statements, you first need to learn how to represent those yes and no options, and you need to understand how to write those branching points as Python code.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Boolean" duration="5">
+        <p>Integers and Float represent numbers. String represent characters and text. Boolean represent true and false. Those two only!</p>
+<p>Example</p>
+<pre><code>is_true = True
+
+is_false = False
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Comparison" duration="5">
+        <table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p>==</p>
+</td><td colspan="1" rowspan="1"><p>Equal to</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>!=</p>
+</td><td colspan="1" rowspan="1"><p>Not equal to</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>&lt;</p>
+</td><td colspan="1" rowspan="1"><p>Less than</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>&gt;</p>
+</td><td colspan="1" rowspan="1"><p>Greater than</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>&lt;=</p>
+</td><td colspan="1" rowspan="1"><p>Less than or equal to</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>&gt;=</p>
+</td><td colspan="1" rowspan="1"><p>Greater than or equal to</p>
+</td></tr>
+</table>
+<p>These operators evaluate to True or False depending on what is on either side of the operator.</p>
+<p>Example</p>
+<pre><code>10 == 10 # True
+10 == 11 # False
+</code></pre>
+<pre><code>10 != 10 # False
+10 != 11 # True
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Boolean Operators" duration="5">
+        <p>The three Boolean operators (and, or, and not) are used to compare Boolean values.</p>
+<p>and</p>
+<pre><code>True and False # False
+True and True # True
+
+</code></pre>
+<p>or</p>
+<pre><code>True or False # True
+True or True # True
+False or False  # False
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="not Operator" duration="5">
+        <p>Unlike and and or, the not operator operates on only one Boolean value (or expression). The not operator simply evaluates to the opposite Boolean value.</p>
+<p>not</p>
+<pre><code>not False # True
+
+not True # False
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Mixing it up!" duration="5">
+        <p>We can combine these operators to evaluate more complex expresions.</p>
+<pre><code>2 &gt; 1 or 10 &lt; 1 # True
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Elements of Flow Control" duration="5">
+        <p>Flow control statements often start with a part called the condition, and all are followed by a block of code called the clause. Before you learn about Python&#39;s specific flow control statements, I&#39;ll cover what a condition and a block are.</p>
+<h3>Condition</h3>
+<p>Something that evaluates to True or False.</p>
+<h3>Code Blocks</h3>
+<p>Lines of Python code can be grouped together in blocks. You can tell when a block begins and ends from the indentation of the lines of code. There are three rules for blocks.</p>
+<ul>
+<li>Blocks begin when the indentation increases.</li>
+<li>Blocks can contain other blocks.</li>
+<li>Blocks end when the indentation decreases to zero or to a containing block&#39;s indentation.</li>
+</ul>
+<p>#### Example</p>
+<pre><code>fish = &#34;salmon&#34;
+
+if fish == &#34;salmon&#34;:
+    print(&#34;Lets make sushi!&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="If statement" duration="5">
+        <p>The most common type of flow control statement is the if statement. An if statement&#39;s clause (that is, the block following the if statement) will execute if the statement&#39;s condition is True. The clause is skipped if the condition is False.</p>
+<p>In plain English, an if statement could be read as, &#34;If this condition is true, execute the code in the clause.&#34; In Python, an if statement consists of the following:</p>
+<p>The if keyword</p>
+<ul>
+<li>A condition (that is, an expression that evaluates to True or False)</li>
+<li>A colon</li>
+<li>Starting on the next line, an indented block of code (called the if clause)</li>
+</ul>
+<pre><code>fish = &#34;salmon&#34;
+
+if fish == &#34;salmon&#34;:
+    print(&#34;Lets make sushi!&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Else statement" duration="5">
+        <p>An if clause can optionally be followed by an else statement. The else clause is executed only when the if statement&#39;s condition is False. In plain English, an else statement could be read as, &#34;If this condition is true, execute this code. Or else, execute that code.&#34; An else statement doesn&#39;t have a condition, and in code, an else statement always consists of the following:</p>
+<ul>
+<li>The else keyword</li>
+<li>A colon</li>
+<li>Starting on the next line, an indented block of code (called the else clause)</li>
+</ul>
+<pre><code>fish = &#34;trout&#34;
+
+if fish == &#34;salmon&#34;:
+    print(&#34;Lets make sushi!&#34;)
+else:
+    print(&#34;Mhhh, maybe we will make sushi&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Elif statement" duration="5">
+        <p>While only one of the if or else clauses will execute, you may have a case where you want one of many possible clauses to execute. The elif statement is an &#34;else if&#34; statement that always follows an if or another elif statement. It provides another condition that is checked only if all of the previous conditions were False. In code, an elif statement always consists of the following:</p>
+<ul>
+<li>The elif keyword</li>
+<li>A condition (that is, an expression that evaluates to True or False)</li>
+<li>A colon</li>
+<li>Starting on the next line, an indented block of code (called the elif clause)</li>
+</ul>
+<pre><code>fish = &#34;trout&#34;
+
+if fish == &#34;salmon&#34;:
+    print(&#34;Lets make sushi!&#34;)
+elif fish = &#34;trout&#34;:
+    print(&#34;Lets make fish stew!&#34;)
+else:
+    print(&#34;I dont know what we can make!&#34;)
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise 3" duration="10">
+        <p>Write a program where the user is promted to choose between three food options and print back to the user what the main ingredient is.</p>
+<p>Example food options:</p>
+<p>Meatballs -&gt; beef<br>Sushi -&gt; salmon<br>Caesar salad -&gt; Chicken</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Loops" duration="5">
+        <p>You can make a block of code execute over and over again with a while statement. The code in a while clause will be executed as long as the while statement&#39;s condition is True. In code, a while statement always consists of the following:</p>
+<ul>
+<li>The while keyword</li>
+<li>A condition (that is, an expression that evaluates to True or False)</li>
+<li>A colon</li>
+<li>Starting on the next line, an indented block of code (called the while clause)</li>
+</ul>
+<p>Example</p>
+<pre><code>while(True):
+    print(&#34;Whoopsi!&#34;)
+
+</code></pre>
+<p>Repeater</p>
+<pre><code>while(True):
+    name = input(&#34;Please write your name: &#34;)
+    print(&#34;Hello &#34; + name + &#34;!&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Break statement" duration="5">
+        <p>Break statements are shortcuts out of a loop.</p>
+<pre><code>while(True):
+    name = input(&#34;Please write your name: &#34;)
+    print(&#34;Hello &#34; + name + &#34;!&#34;)
+    if name == &#34;Martin&#34;:
+        print(&#34;Oh, Martin!&#34;)
+        break
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Continue statement" duration="5">
+        <p>Like break statements, continue statements are used inside loops. When the program execution reaches a continue statement, the program execution immediately jumps back to the start of the loop and reevaluates the loop&#39;s condition. (This is also what happens when the execution reaches the end of the loop.)</p>
+<pre><code>while(True):
+    name = input(&#34;Please write your name: &#34;)
+    if name == &#34;Martin&#34;:
+        continue
+    print(&#34;Hello &#34; + name + &#34;!&#34;)
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Exercise 4" duration="15">
+        <p>Write a program that continously loops and asks the user if they want to continue. Every time the user answers yes, the program will print how many times the user has answered yes and ask the user again.</p>
+<p>Example use:</p>
+<pre><code>Do you want to continue? yes
+1
+Do you want to continue? yes
+2
+Do you want to continue? yes
+3
+Do you want to continue? no
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="For loops" duration="5">
+        <p>The while loop keeps looping while its condition is True (which is the reason for its name), but what if you want to execute a block of code only a certain number of times? You can do this with a for loop statement and the range() function.</p>
+<p>In code, a for statement looks something like for i in range(5): and always includes the following:</p>
+<ul>
+<li>The for keyword</li>
+<li>A variable name</li>
+<li>The in keyword</li>
+<li>A call to the range() method with up to three integers passed to it</li>
+<li>A colon</li>
+<li>Starting on the next line, an indented block of code (called the for clause)</li>
+</ul>
+<pre><code>for i in range(10):
+    print(i)
 
 </code></pre>
 
