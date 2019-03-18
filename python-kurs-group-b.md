@@ -25,9 +25,12 @@ A program is like a:
 
 But for the computer!
 
+![Code image](resources/code_image.png)
 
 ## Programming 2
 Duration: 5:00
+
+For most people, their computer is just an appliance instead of a tool. But by learning how to program, you’ll gain access to one of the most powerful tools of the modern world, and you’ll have fun along the way. Programming isn’t brain surgery—it’s fine for amateurs to experiment and make mistakes.
 
 All programs, written in any language uses the same basic building blocks
 
@@ -37,22 +40,29 @@ Her are a few of the most common:
  - "Do this action that number of times"
  - "Keep doing that until this condition is true"
 
-
+![Blocks image](resources/blocks2.png)
 
 ## Programming 3
 Duration: 5:00
 
-For most people, their computer is just an appliance instead of a tool. But by learning how to program, you’ll gain access to one of the most powerful tools of the modern world, and you’ll have fun along the way. Programming isn’t brain surgery—it’s fine for amateurs to experiment and make mistakes.
+All programming no matter the language follows three simple steps.
+
+1. Write code as text in a editor
+
+2. Compile the code to machine code the computer can run
+
+3. Run the machine code on the computer
+
+Different programming language package these steps differently. But the steps remain the same.
+
+ ![Python code process](resources/python-i.png)
+
 
 ## Python
 Python is a clear and powerful object-oriented programming language, comparable to Perl, Ruby, Scheme, or Java.
 
 
 Developed by Guido van Rossum
-
-## Python Programming - big picture
-
- ![Python code process](resources/python-i.png)
 
 ## Installation
 Duration: 10:00
@@ -85,20 +95,28 @@ python3 --version
 
 On macOS, the best way to install Python 3 is to use Homebrew. Not familiar with homebrew? [link](https://brew.sh/)
 
+[tutorial to install homebrew and python](https://wsvincent.com/install-python3-mac/)
+
 ```bash
 brew install python3
+```
+
+Verify installation
+
+```bash
+python3 --version
 ```
 
 
 ## Table-Of-Contents
 Duration: 1:00
 
- There are several tools installed with the Python interpeter. Here are some of them:
+ There are several tools installed with the Python interpreter. Here are some of them:
 
 
 | Tool      | Description  |
 | ------------- |:-------------:|
-| python interpreter     | The python interpreter. The executable that can be called directly from the commandline/terminal to start a new interactive python session (REPL) or to run python modules/files/packages |
+| python interpreter     | The python interpreter. The executable that can be called directly from the command line prompt/terminal to start a new interactive python session (REPL) or to run python modules/files/packages |
 | pip     | The Python package manager. The official Python package manager. Lets the user download and manage third-party packages hosted on the Python package index (PyPI)      | 
 | IDLE | IDLE is Python’s Integrated Development and Learning Environment. Its a Python IDE for and by Python | 
 | pydoc| The pydoc module automatically generates documentation from Python modules. | 
@@ -108,7 +126,11 @@ Duration: 1:00
 
 ## Development Tools
 
-Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use porpouse built tools for Python development.
+Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use purpose built tools for Python development.
+
+VSCODE is a good and free text editor: [link](https://code.visualstudio.com/)
+
+![vscode image](resources/vscode.png)
 
 
 ## Python a overview
@@ -119,22 +141,22 @@ Objects are Python’s abstraction for data. All data in a Python program is rep
 
  - Python is strongly typed and dynamically typed.
 
- - Python is a general porpouse progragramming language. It is not the best choice for time critical or memory constrained tasks.
+ - Python is a general purpose programming language. It is not the best choice for time critical or memory constrained tasks.
 
- - Python is really a compiled programming language, but it acts as a interpred language.
+ - Python is really a compiled programming language, but it acts as a interpreted language.
 
  - There exist different implementation of Python. The most common, and the one we will use in this course is CPython.
 
- - Python comes with "Batteries included", meaning Python comes with a feature rich standard libary.
+ - Python comes with "Batteries included", meaning Python comes with a feature rich standard library.
 
 
 
 ## Python 2 and Python 3
 Duration: 1:00
 
-Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.
+Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.
 
-Practicly this means that new Python packages and application will in most cases be written in Python 3. 
+Practically this means that new Python packages and application will in most cases be written in Python 3. 
 
 ### Python 2 end of life is january 1 2020.
 
@@ -145,7 +167,7 @@ Practicly this means that new Python packages and application will in most cases
 Duration: 5:00
 
 
-Aritmetric
+Arithmetic
 
 #### In the REPL try:
 
@@ -193,7 +215,7 @@ Programs will crash if they contain code the computer can’t understand, which 
 ## Python Objects and Types
 Duration: 5:00
 
-In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.
+In a typical Python program there is a lot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up several functions and classes to get only the basic functionality.
 
 #### Python built-in types
 
@@ -202,7 +224,7 @@ In a typical Python program there is alot less dumb grunt work than in program i
 | Numbers     | 12 , 343.34 , Decimal() |
 | Strings    | "sauna", 'python' | 
 | Lists| [1, "two, [ 4, 5] ]| 
-| Dictonaries | {"breakfast": "eggs", "number": 1, "nested": {1: "element"}} | 
+| Dictionaries | {"breakfast": "eggs", "number": 1, "nested": {1: "element"}} | 
 | Tuples | (1, "bacon", 13.2, ["data", 1]) | 
 | Sets | set("aaaa") -> {"a"}| 
 | Booleans| True, False | 
@@ -281,7 +303,7 @@ my_joined_string = "Hello " + 50
 ```
 Because the two values on either side of the + operator are of different types.
 
-Multiplying Strings and numbers on the otherhand does work
+Multiplying Strings and numbers on does work
 
 ```python
 
@@ -313,7 +335,7 @@ help() # Invoke the built-in help system. (This function is intended for interac
 ```
 
 
-## Writting a Python program
+## Writing a Python program
 Duration: 5:00
 
 A Python program is nothing more than a text file with a fancy file ending ".py". To create our own program we need to do nothing more than write Python code in a text file and run the file with the Python interpreter.
@@ -353,7 +375,7 @@ print("Your name is: " + user_name + " and your age is: " + str(user_age))
 ## Converting between types
 Duration: 5:00
 
-Every variable in your Python program has a type. Python is dynamicaly typed so the type and value of the thing a variable points to can change, but the value it points to will always have a type.
+Every variable in your Python program has a type. Python is dynamically typed so the type and value of the thing a variable points to can change, but the value it points to will always have a type.
 
 #### We can convert between built-in types with the built-in type conversion functions:
 
@@ -391,10 +413,10 @@ Print the numbers back to the user on a single line.
 ## Flow Control
  Duration: 5:00
 
- Controll flow is the mechanisims a programmer uses to change what the program should do based on the state of the program.
+ Control flow is the mechanisms a programmer uses to change what the program should do based on the state of the program.
 
 
-![Controll Flow image](resources/controll_flow.png)
+![Control Flow image](resources/controll_flow2.png)
 
 But before you learn about flow control statements, you first need to learn how to represent those yes and no options, and you need to understand how to write those branching points as Python code.
 
@@ -478,7 +500,7 @@ not True # False
 ## Mixing it up!
 Duration: 5:00
 
-We can combine these operators to evaluate more complex expresions.
+We can combine these operators to evaluate more complex expressions.
 
 
 ```python
@@ -505,7 +527,7 @@ Lines of Python code can be grouped together in blocks. You can tell when a bloc
 
  - Blocks end when the indentation decreases to zero or to a containing block’s indentation.
 
- #### Example
+#### Example
 
  ```python
 
@@ -594,7 +616,7 @@ else:
 ## Exercise 3
 Duration: 10:00
 
-Write a program where the user is promted to choose between three food options and print back to the user what the main ingredient is.
+Write a program where the user is prompted to choose between three food options and print back to the user what the main ingredient is.
 
 Example food options:
 
@@ -670,7 +692,7 @@ while(True):
 ## Exercise 4
 Duration: 15:00
 
-Write a program that continously loops and asks the user if they want to continue. Every time the user answers yes, the program will print how many times the user has answered yes and ask the user again.
+Write a program that continuously loops and asks the user if they want to continue. Every time the user answers yes, the program will print how many times the user has answered yes and ask the user again.
 
 Example use:
 ```

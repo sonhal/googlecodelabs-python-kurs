@@ -39,12 +39,14 @@
 <li>Ikea assembly manual</li>
 </ul>
 <p>But for the computer!</p>
+<p><img alt="Code image" src="img/eeb899fbc73f1dfc.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Programming 2" duration="5">
-        <p>All programs, written in any language uses the same basic building blocks</p>
+        <p>For most people, their computer is just an appliance instead of a tool. But by learning how to program, you&#39;ll gain access to one of the most powerful tools of the modern world, and you&#39;ll have fun along the way. Programming isn&#39;t brain surgery—it&#39;s fine for amateurs to experiment and make mistakes.</p>
+<p>All programs, written in any language uses the same basic building blocks</p>
 <p>Her are a few of the most common:</p>
 <ul>
 <li>&#34;Do this; Then do that&#34;</li>
@@ -52,12 +54,20 @@
 <li>&#34;Do this action that number of times&#34;</li>
 <li>&#34;Keep doing that until this condition is true&#34;</li>
 </ul>
+<p><img alt="Blocks image" src="img/6ea1bfdda529ab1f.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Programming 3" duration="5">
-        <p>For most people, their computer is just an appliance instead of a tool. But by learning how to program, you&#39;ll gain access to one of the most powerful tools of the modern world, and you&#39;ll have fun along the way. Programming isn&#39;t brain surgery—it&#39;s fine for amateurs to experiment and make mistakes.</p>
+        <p>All programming no matter the language follows three simple steps.</p>
+<ol type="1">
+<li>Write code as text in a editor</li>
+<li>Compile the code to machine code the computer can run</li>
+<li>Run the machine code on the computer</li>
+</ol>
+<p>Different programming language package these steps differently. But the steps remain the same.</p>
+<p><img alt="Python code process" src="img/8ea3f1ac30d1a620.png"></p>
 
 
       </google-codelab-step>
@@ -65,12 +75,6 @@
       <google-codelab-step label="Python" duration="0">
         <p>Python is a clear and powerful object-oriented programming language, comparable to Perl, Ruby, Scheme, or Java.</p>
 <p>Developed by Guido van Rossum</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Python Programming - big picture" duration="0">
-        <p><img alt="Python code process" src="img/8ea3f1ac30d1a620.png"></p>
 
 
       </google-codelab-step>
@@ -96,18 +100,22 @@ python3 --version
 </code></pre>
 <h2>Mac</h2>
 <p>On macOS, the best way to install Python 3 is to use Homebrew. Not familiar with homebrew? <a href="https://brew.sh/" target="_blank">link</a></p>
+<p><a href="https://wsvincent.com/install-python3-mac/" target="_blank">tutorial to install homebrew and python</a></p>
 <pre><code>brew install python3
+</code></pre>
+<p>Verify installation</p>
+<pre><code>python3 --version
 </code></pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Table-Of-Contents" duration="1">
-        <p>There are several tools installed with the Python interpeter. Here are some of them:</p>
+        <p>There are several tools installed with the Python interpreter. Here are some of them:</p>
 <table>
 <tr></tr>
 <tr><td colspan="1" rowspan="1"><p>python interpreter</p>
-</td><td colspan="1" rowspan="1"><p>The python interpreter. The executable that can be called directly from the commandline/terminal to start a new interactive python session (REPL) or to run python modules/files/packages</p>
+</td><td colspan="1" rowspan="1"><p>The python interpreter. The executable that can be called directly from the command line prompt/terminal to start a new interactive python session (REPL) or to run python modules/files/packages</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>pip</p>
 </td><td colspan="1" rowspan="1"><p>The Python package manager. The official Python package manager. Lets the user download and manage third-party packages hosted on the Python package index (PyPI)</p>
@@ -124,7 +132,9 @@ python3 --version
       </google-codelab-step>
     
       <google-codelab-step label="Development Tools" duration="0">
-        <p>Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use porpouse built tools for Python development.</p>
+        <p>Python can be used and developed with using only a basic text editor and the python interpreter. But for larger and more complex projects there is a benefit to use purpose built tools for Python development.</p>
+<p>VSCODE is a good and free text editor: <a href="https://code.visualstudio.com/" target="_blank">link</a></p>
+<p><img alt="vscode image" src="img/f42e4c63090983ea.png"></p>
 
 
       </google-codelab-step>
@@ -133,18 +143,18 @@ python3 --version
         <p>Objects are Python&#39;s abstraction for data. All data in a Python program is represented by objects or by relations between objects.</p>
 <ul>
 <li>Python is strongly typed and dynamically typed.</li>
-<li>Python is a general porpouse progragramming language. It is not the best choice for time critical or memory constrained tasks.</li>
-<li>Python is really a compiled programming language, but it acts as a interpred language.</li>
+<li>Python is a general purpose programming language. It is not the best choice for time critical or memory constrained tasks.</li>
+<li>Python is really a compiled programming language, but it acts as a interpreted language.</li>
 <li>There exist different implementation of Python. The most common, and the one we will use in this course is CPython.</li>
-<li>Python comes with &#34;Batteries included&#34;, meaning Python comes with a feature rich standard libary.</li>
+<li>Python comes with &#34;Batteries included&#34;, meaning Python comes with a feature rich standard library.</li>
 </ul>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Python 2 and Python 3" duration="1">
-        <p>Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggeled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.</p>
-<p>Practicly this means that new Python packages and application will in most cases be written in Python 3.</p>
+        <p>Python has two main versions. Python 2 and Python 3. Python 3 is the newest, but it has struggled with adoption for some time. Python 3 has as of 2018 taken the mantle as the main version from Python 2.</p>
+<p>Practically this means that new Python packages and application will in most cases be written in Python 3.</p>
 <h2>Python 2 end of life is january 1 2020.</h2>
 <p><img alt="Python 2 to Python 3" src="img/41d6e8981000e655.jpeg"></p>
 
@@ -152,7 +162,7 @@ python3 --version
       </google-codelab-step>
     
       <google-codelab-step label="Python Basics" duration="5">
-        <p>Aritmetric</p>
+        <p>Arithmetic</p>
 <h3>In the REPL try:</h3>
 <p>adding</p>
 <pre><code> 2 + 2
@@ -187,7 +197,7 @@ python3 --version
       </google-codelab-step>
     
       <google-codelab-step label="Python Objects and Types" duration="5">
-        <p>In a typical Python program there is alot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up serveral functions and classes to get only the basic functionality.</p>
+        <p>In a typical Python program there is a lot less dumb grunt work than in program implemented in other languages. Python provides powerful object types built into the language. There is less of a need to code up several functions and classes to get only the basic functionality.</p>
 <h3>Python built-in types</h3>
 <table>
 <tr></tr>
@@ -200,7 +210,7 @@ python3 --version
 <tr><td colspan="1" rowspan="1"><p>Lists</p>
 </td><td colspan="1" rowspan="1"><p>[1, &#34;two, [ 4, 5] ]</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p>Dictonaries</p>
+<tr><td colspan="1" rowspan="1"><p>Dictionaries</p>
 </td><td colspan="1" rowspan="1"><p>{&#34;breakfast&#34;: &#34;eggs&#34;, &#34;number&#34;: 1, &#34;nested&#34;: {1: &#34;element&#34;}}</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>Tuples</p>
@@ -267,7 +277,7 @@ python3 --version
 
 </code></pre>
 <p>Because the two values on either side of the + operator are of different types.</p>
-<p>Multiplying Strings and numbers on the otherhand does work</p>
+<p>Multiplying Strings and numbers on does work</p>
 <pre><code>my_joined_string = &#34;Hello,&#34; * 2 # &#39;Hello,Hello,&#39;
 
 </code></pre>
@@ -294,7 +304,7 @@ help() # Invoke the built-in help system. (This function is intended for interac
 
       </google-codelab-step>
     
-      <google-codelab-step label="Writting a Python program" duration="5">
+      <google-codelab-step label="Writing a Python program" duration="5">
         <p>A Python program is nothing more than a text file with a fancy file ending &#34;.py&#34;. To create our own program we need to do nothing more than write Python code in a text file and run the file with the Python interpreter.</p>
 <p>This will run the code written in the file &#34;my_program.py&#34;</p>
 <pre><code>python my_program.py 
@@ -328,7 +338,7 @@ print(&#34;Your name is: &#34; + user_name + &#34; and your age is: &#34; + str(
       </google-codelab-step>
     
       <google-codelab-step label="Converting between types" duration="5">
-        <p>Every variable in your Python program has a type. Python is dynamicaly typed so the type and value of the thing a variable points to can change, but the value it points to will always have a type.</p>
+        <p>Every variable in your Python program has a type. Python is dynamically typed so the type and value of the thing a variable points to can change, but the value it points to will always have a type.</p>
 <h3>We can convert between built-in types with the built-in type conversion functions:</h3>
 <pre><code>str()
 
@@ -351,8 +361,8 @@ print(&#34;Your name is: &#34; + user_name + &#34; and your age is: &#34; + str(
       </google-codelab-step>
     
       <google-codelab-step label="Flow Control" duration="5">
-        <p>Controll flow is the mechanisims a programmer uses to change what the program should do based on the state of the program.</p>
-<p><img alt="Controll Flow image" src="img/ce6a2fff0bfd1079.png"></p>
+        <p>Control flow is the mechanisms a programmer uses to change what the program should do based on the state of the program.</p>
+<p><img alt="Control Flow image" src="img/7385fdaeb872bf59.png"></p>
 <p>But before you learn about flow control statements, you first need to learn how to represent those yes and no options, and you need to understand how to write those branching points as Python code.</p>
 
 
@@ -432,7 +442,7 @@ not True # False
       </google-codelab-step>
     
       <google-codelab-step label="Mixing it up!" duration="5">
-        <p>We can combine these operators to evaluate more complex expresions.</p>
+        <p>We can combine these operators to evaluate more complex expressions.</p>
 <pre><code>2 &gt; 1 or 10 &lt; 1 # True
 
 </code></pre>
@@ -451,7 +461,7 @@ not True # False
 <li>Blocks can contain other blocks.</li>
 <li>Blocks end when the indentation decreases to zero or to a containing block&#39;s indentation.</li>
 </ul>
-<p>#### Example</p>
+<h3>Example</h3>
 <pre><code>fish = &#34;salmon&#34;
 
 if fish == &#34;salmon&#34;:
@@ -522,7 +532,7 @@ else:
       </google-codelab-step>
     
       <google-codelab-step label="Exercise 3" duration="10">
-        <p>Write a program where the user is promted to choose between three food options and print back to the user what the main ingredient is.</p>
+        <p>Write a program where the user is prompted to choose between three food options and print back to the user what the main ingredient is.</p>
 <p>Example food options:</p>
 <p>Meatballs -&gt; beef<br>Sushi -&gt; salmon<br>Caesar salad -&gt; Chicken</p>
 
@@ -580,7 +590,7 @@ else:
       </google-codelab-step>
     
       <google-codelab-step label="Exercise 4" duration="15">
-        <p>Write a program that continously loops and asks the user if they want to continue. Every time the user answers yes, the program will print how many times the user has answered yes and ask the user again.</p>
+        <p>Write a program that continuously loops and asks the user if they want to continue. Every time the user answers yes, the program will print how many times the user has answered yes and ask the user again.</p>
 <p>Example use:</p>
 <pre><code>Do you want to continue? yes
 1
