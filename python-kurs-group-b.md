@@ -13,6 +13,8 @@ Duration: 5:00
 
 This course will walk you through the basic concepts of Programming using the Python programming language.
 
+Great online course/book: [automate the boring stuff](https://automatetheboringstuff.com/)
+
 
 ## Programming 1
 Duration: 5:00
