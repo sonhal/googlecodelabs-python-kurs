@@ -13,7 +13,9 @@ Duration: 5:00
 
 This course will walk you through the basic concepts of Programming using the Python programming language.
 
-Great online course/book: [automate the boring stuff](https://automatetheboringstuff.com/)
+Great online course/book for practical use of Python: [automate the boring stuff](https://automatetheboringstuff.com/)
+
+A more academic deep dive course in programming with Python: [Edx](https://www.edx.org/course/computing-in-python-i-fundamentals-and-procedural-programming-2) PS: There is an option to pay to get a certificate for completing the course. This is optional! Completing the course without a certificate is free.
 
 
 ## Programming 1
