@@ -811,3 +811,142 @@ result = booer("Sondre")
 Create a function that takes a string and returns the number of A's in the string.
 
 
+
+## None
+
+In Python there is a value called None, which represents the absence of a value. None is the only value of the NoneType data type. (Other programming languages might call this value null, nil, or undefined.) Just like the Boolean True and False values, None must be typed with a capital N.
+
+```python
+
+is_none = None
+
+```
+
+
+## Keyword Arguments
+
+keyword arguments are identified by the keyword put before them in the function call. Keyword arguments are often used for optional parameters.
+
+
+```python
+def booer(name):
+    return "Booo " + str(name) + "!")
+
+
+result = booer(name="Sondre")
+
+```
+
+The print() function has the optional parameters end and sep to specify what should be printed at the end of its arguments and between its arguments (separating them), respectively.
+
+```python
+
+print('Hello', end='')
+print('World')
+
+```
+
+## Local and Global Scope
+
+Parameters and variables that are assigned in a called function are said to exist in that function’s local scope. Variables that are assigned outside all functions are said to exist in the global scope. A variable that exists in a local scope is called a local variable, while a variable that exists in the global scope is called a global variable. A variable must be one or the other; it cannot be both local and global.
+
+
+- Code in the global scope cannot use any local variables.
+
+- However, a local scope can access global variables.
+
+- Code in a function’s local scope cannot use variables in any other local scope.
+
+- You can use the same name for different variables if they are in different scopes. That is, there can be a local variable named spam and a global variable also named spam.
+
+
+#### Local variables cannot be used in global scope
+
+```python
+
+def my_function():
+    cooking_pans = 10
+
+print(cooking_pans) # Will throw exception!
+
+```
+
+
+## Exception Handling
+
+Right now, getting an error, or exception, in your Python program means the entire program will crash. You don’t want this to happen in real-world programs. Instead, you want the program to detect errors, handle them, and then continue to run.
+
+#### Exception example
+
+```python
+
+def zero_div():
+    return 10 / 0
+
+```
+
+Errors can be handled with try and except statements. The code that could potentially have an error is put in a try clause. The program execution moves to the start of a following except clause if an error happens.
+
+```python
+
+def divide_by(number):
+    try:
+        return 100 / number
+    except ZeroDivisionError:
+        print("Error: Zero division attempted!")
+
+```
+
+
+## Exercise 7
+
+Create a program that prompts the user for a number and a word. The the program should then print the word given by the user as many times as the number.
+Additionally, make sure the program does not crash if the user inputs something else then a number. (use try/catch)
+
+## List
+
+A list is a value that contains multiple values in an ordered sequence. The term list value refers to the list itself (which is a value that can be stored in a variable or passed to a function like any other value), not the values inside the list value. 
+
+#### Example
+
+```python
+my_list = [] # create a empty list
+
+also_my_list = list() # create a empty list with the list function
+
+cool_list = ["Some", "Data", "Items"]
+
+```
+
+## Getting values from a List
+
+Say you have the list ['cat', 'bat', 'rat', 'elephant'] stored in a variable named spam. The Python code spam[0] would evaluate to 'cat', and spam[1] would evaluate to 'bat', and so on. The integer inside the square brackets that follows the list is called an index.
+
+### Lists items can be accessed by index
+
+```python
+my_list = ["I", "am", "having", "fun"]
+
+element = my_list[0]
+
+print(element) # I
+
+```
+
+## Negative Indexes
+
+While indexes start at 0 and go up, you can also use negative integers for the index. The integer value -1 refers to the last index in a list, the value -2 refers to the second-to-last index in a list.
+
+
+```python
+my_list = ["I", "am", "having", "fun"]
+
+element = my_list[-1]
+
+print(element) # fun
+
+```
+
+## Exercise 8
+Create a function that takes a list and prints the first and last item in the list.
+
