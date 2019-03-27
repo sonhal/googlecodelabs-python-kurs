@@ -952,3 +952,10 @@ print(element) # fun
 ## Exercise 8
 Create a function that takes a list and prints the first and last item in the list.
 
+## Dictionary
+Like a list, a dictionary is a collection of many values. But unlike indexes for lists, indexes for dictionaries can use many different data types, not just integers. Indexes for dictionaries are called keys, and a key with its associated value is called a key-value pair.
+
+```python
+
+my_dict = {"car": "volvo", "ship": "titanic"}
+```
